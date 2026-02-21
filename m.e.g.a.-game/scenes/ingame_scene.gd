@@ -9,8 +9,6 @@ var ExpectedBotAge: float
 @onready var fade_overlay = %FadeOverlay
 @onready var pause_overlay = %PauseOverlay
 
-@onready var childButton: YesButton = self.get_child.(0)
-
 func _ready() -> void:
 	fade_overlay.visible = true
 	
@@ -28,3 +26,7 @@ func _input(event) -> void:
 		
 func _save_game() -> void:
 	SaveGame.save_game(get_tree())
+
+#Add a function that triggers for whhen you win
+
+#Add a function that triggers for when you lose

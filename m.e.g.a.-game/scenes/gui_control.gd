@@ -73,6 +73,11 @@ func _on_button_pressed() -> void:
 	Botmodifier = [1, -1].pick_random() 
 	BotExpectedDeath = YearsAffcecting * modifier
 	health_bar2.value += 1 
+	
+	if ExpectedDeath - health_bar.value <= 5:
+		health_bar.modulate = Color.RED
+	else:
+		health_bar.modulate = Color.WHITE
 
 
 func _on_button_2_pressed() -> void:
