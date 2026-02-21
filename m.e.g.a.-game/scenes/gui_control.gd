@@ -28,14 +28,18 @@ var questions = [
 @onready var health_bar: ProgressBar = $HealthBar # Get a reference to the health bar node
 @onready var label = $Label # Assuming Label is a child
 
-var ExpectedDeath: float
-var YearsAffcecting: float
+var ExpectedDeath: int
+var YearsAffcecting: int
 var AddOrSubtract: bool
+var modifier
+var GainorLoss = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health_bar.max_value = ExpectedDeath
-	health_bar.value = 0
+	health_bar.max_value = 100
+	health_bar.value = 1
+	rng.randomize()
+	label.text = "Do you want to " + questions.pick_random() + "?"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,7 +47,15 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	label.text = questions.pick_random()
-	health_bar.value -= 10
-	if health_bar.value <= 0:
-		print("Health is zero!")
+	YearsAffcecting = rng.randi_range(1, 20) 
+	modifier = [1, -1].pick_random() 
+	ExpectedDeath = YearsAffcecting * modifier
+	
+	if modifier < 1:
+		GainorLoss = "lost"
+	else: GainorLoss = "gained"
+	
+	label.text = "Yo u " + GainorLoss + " " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + questions.pick_random() + "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
+	health_bar.value += 1 
+	if health_bar.value >= ExpectedDeath:
+		print("You have died")
