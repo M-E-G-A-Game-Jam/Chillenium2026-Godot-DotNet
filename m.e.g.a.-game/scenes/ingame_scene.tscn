@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cik30de5gaaah"]
+
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
+[ext_resource type="Script" uid="uid://cu3npowt4r1px" path="res://scenes/node_example.gd" id="3_a5686"]
+[ext_resource type="Script" uid="uid://cpqpmnlv47hfy" path="res://scenes/gui_control.gd" id="5_2577t"]
+
+[node name="IngameScene" type="Node2D" unique_id=1150025762]
+
+[node name="NodeExample" type="Sprite2D" parent="." unique_id=1745777263 groups=["Persist"]]
+position = Vector2(202, -73)
+texture = ExtResource("2_h1yxu")
+script = ExtResource("3_a5686")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=239435339]
+
+[node name="FadeOverlay" parent="UI" unique_id=134138849 instance=ExtResource("1_y6ebv")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" unique_id=696496564 instance=ExtResource("3_8o178")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="Gui-Control" type="Control" parent="." unique_id=517282870]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_2577t")
+
+[node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 196.0
+offset_right = 230.0
+offset_bottom = 241.0
+text = "Yes"
+
+[node name="HealthBar" type="ProgressBar" parent="Gui-Control" unique_id=1238844547]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 292.0
+offset_right = 279.11572
+offset_bottom = 339.6529
+rotation = -1.5707964
+
+[node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 48.0
+offset_right = 427.0
+offset_bottom = 150.0
+
+[connection signal="pressed" from="Gui-Control/Button" to="Gui-Control" method="_on_button_pressed"]
