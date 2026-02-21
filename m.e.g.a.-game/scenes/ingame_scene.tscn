@@ -31,27 +31,44 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_2577t")
 
-[node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
+[node name="Button2" type="Button" parent="Gui-Control" unique_id=2048233691]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 196.0
-offset_right = 230.0
-offset_bottom = 241.0
-text = "Yes"
+offset_left = 337.0
+offset_top = 192.0
+offset_right = 419.0
+offset_bottom = 233.0
+text = "No"
 
 [node name="HealthBar" type="ProgressBar" parent="Gui-Control" unique_id=1238844547]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 292.0
-offset_right = 279.11572
-offset_bottom = 339.6529
+offset_left = 50.0
+offset_top = 267.0
+offset_right = 290.11572
+offset_bottom = 314.6529
+rotation = -1.5707964
+
+[node name="HealthBar2" type="ProgressBar" parent="Gui-Control" unique_id=1536481294]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 273.0
+offset_right = 708.1157
+offset_bottom = 320.6529
 rotation = -1.5707964
 
 [node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 48.0
-offset_right = 427.0
-offset_bottom = 150.0
+offset_left = 118.0
+offset_top = 36.0
+offset_right = 298.0
+offset_bottom = 124.0
 
+[node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 187.0
+offset_right = 237.0
+offset_bottom = 232.0
+text = "Yes"
+
+[connection signal="pressed" from="Gui-Control/Button2" to="Gui-Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Gui-Control/Button" to="Gui-Control" method="_on_button_pressed"]

@@ -26,6 +26,7 @@ var questions = [
     "Learn to play an instrument"
 ]
 @onready var health_bar: ProgressBar = $HealthBar # Get a reference to the health bar node
+@onready var health_bar2: ProgressBar = $HealthBar2
 @onready var label = $Label # Assuming Label is a child
 
 var ExpectedDeath: int
@@ -34,10 +35,18 @@ var AddOrSubtract: bool
 var modifier
 var GainorLoss = ""
 
+var BotExpectedDeath: int
+var BotYearsAffcecting: int
+var BotAddOrSubtract: bool
+var Botmodifier
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	health_bar.max_value = 100
 	health_bar.value = 1
+	health_bar2.max_value = 100
+	health_bar2.value = 1
+	
 	rng.randomize()
 	label.text = "Do you want to " + questions.pick_random() + "?"
 
@@ -55,7 +64,16 @@ func _on_button_pressed() -> void:
 		GainorLoss = "lost"
 	else: GainorLoss = "gained"
 	
-	label.text = "Yo u " + GainorLoss + " " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + questions.pick_random() + "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
+	label.text = "You " + GainorLoss + " " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + questions.pick_random() + "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
 	health_bar.value += 1 
 	if health_bar.value >= ExpectedDeath:
 		print("You have died")
+		
+	BotYearsAffcecting = rng.randi_range(1, 20) 
+	Botmodifier = [1, -1].pick_random() 
+	BotExpectedDeath = YearsAffcecting * modifier
+	health_bar2.value += 1 
+
+
+func _on_button_2_pressed() -> void:
+	print("then no button has been pressed!")
