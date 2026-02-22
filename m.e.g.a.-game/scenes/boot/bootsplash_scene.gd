@@ -19,7 +19,6 @@ func _ready():
 	tween.tween_property(instance, "modulate:a", 1.0, fade_duration)\
 	.from(0.0)\
 	.finished.connect(_fade_out)
-	
 func _process(_delta):
 	if interuptable and Input.is_action_just_pressed("exit"):
 		_change_scene()
