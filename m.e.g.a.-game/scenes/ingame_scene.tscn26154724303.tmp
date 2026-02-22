@@ -1,0 +1,403 @@
+[gd_scene format=3 uid="uid://cik30de5gaaah"]
+
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
+[ext_resource type="Script" uid="uid://cu3npowt4r1px" path="res://scenes/node_example.gd" id="3_a5686"]
+[ext_resource type="Script" uid="uid://cpqpmnlv47hfy" path="res://scenes/gui_control.gd" id="5_2577t"]
+[ext_resource type="Texture2D" uid="uid://durbm5qg8ntlx" path="res://assets/left guy/left guy/Left guy 0-5.png" id="6_5jhce"]
+[ext_resource type="Texture2D" uid="uid://cqyqn6ch5a66r" path="res://assets/longarms/Left Hand.png" id="7_ilpo5"]
+[ext_resource type="Texture2D" uid="uid://jrllqm5v80ht" path="res://assets/left guy/left guy/Left Guy 5-10.png" id="7_lbq3s"]
+[ext_resource type="Texture2D" uid="uid://cegnycn3iloty" path="res://assets/left guy/left guy/Left Guy 10-20.png" id="8_2fmb7"]
+[ext_resource type="Script" uid="uid://dci3klk6dr4fd" path="res://scenes/hands.gd" id="8_pxehq"]
+[ext_resource type="Texture2D" uid="uid://cw2t2inpo8nmn" path="res://assets/hands/ old left hand.png" id="9_ilpo5"]
+[ext_resource type="Texture2D" uid="uid://8bhdpcq4d7uj" path="res://assets/left guy/left guy/20-30.png" id="9_x526a"]
+[ext_resource type="Texture2D" uid="uid://cbdrrtkxpmxlp" path="res://assets/hands/ Right hand pointer.png" id="10_pxehq"]
+[ext_resource type="Texture2D" uid="uid://87iwd0r3mfl0" path="res://assets/left guy/left guy/Left Guy 30-40.png" id="10_q6vb2"]
+[ext_resource type="Texture2D" uid="uid://bk5l4ilhuidds" path="res://assets/hands/ Left Hand pointer.png" id="11_4d8mm"]
+[ext_resource type="Texture2D" uid="uid://6l83kiddeuqj" path="res://assets/left guy/left guy/Left Guy 40-50.png" id="11_104ws"]
+[ext_resource type="Texture2D" uid="uid://b7muiqqt66iuf" path="res://assets/left guy/left guy/Left Guy 50-60.png" id="12_qjnmd"]
+[ext_resource type="Texture2D" uid="uid://d1w0mchqcary8" path="res://assets/hands/ old Right Hand.png" id="12_th7mp"]
+[ext_resource type="Texture2D" uid="uid://bta5etl1p85nf" path="res://assets/left and right hands/Right Hand.png" id="13_q7kwb"]
+[ext_resource type="Texture2D" uid="uid://cimrayoqr3rhu" path="res://assets/left guy/left guy/Left Guy 70-80.png" id="14_i6xv3"]
+[ext_resource type="Texture2D" uid="uid://dn3lwktkrfkrk" path="res://assets/left guy/left guy/Left Guy 60-70.png" id="14_ilpo5"]
+[ext_resource type="Texture2D" uid="uid://bcemujfxbjxmx" path="res://assets/left guy/left guy/Left Guy 80-90.png" id="15_diauj"]
+[ext_resource type="Texture2D" uid="uid://1r5d0itj8ilm" path="res://assets/bg1_sprite_sheet.png" id="15_pxehq"]
+[ext_resource type="Texture2D" uid="uid://yc6pi4lhmoee" path="res://assets/no1.png" id="15_th7mp"]
+[ext_resource type="Texture2D" uid="uid://cgudbmey2ek46" path="res://assets/left guy/left guy/Left Guy 90-100.png" id="16_c0xki"]
+[ext_resource type="Texture2D" uid="uid://cwtmojyp5gek" path="res://assets/no_sprite_sheet.png" id="16_q7kwb"]
+[ext_resource type="Texture2D" uid="uid://bu37ifm7pid77" path="res://assets/yesbutton.png" id="17_q7kwb"]
+[ext_resource type="Texture2D" uid="uid://k86bkenioyqo" path="res://assets/right man/Right Man 0-5.png" id="28_pmf6l"]
+[ext_resource type="Texture2D" uid="uid://b82iy5jjspf11" path="res://assets/right man/Right Man 5-10.png" id="29_3egxp"]
+[ext_resource type="Texture2D" uid="uid://dfvjlr5lbn4ah" path="res://assets/right man/Right Man 10-20.png" id="30_fpum5"]
+[ext_resource type="Texture2D" uid="uid://nmqe4caxoa5e" path="res://assets/right man/Right Man 20-30.png" id="31_fbq86"]
+[ext_resource type="Texture2D" uid="uid://djkux8wwhub5c" path="res://assets/right man/Right Man 30-40.png" id="32_er0xd"]
+[ext_resource type="Texture2D" uid="uid://cb3cfmfpmpel7" path="res://assets/right man/Right Man 40-50.png" id="33_pecm8"]
+[ext_resource type="Texture2D" uid="uid://dp0lfumhwqjwx" path="res://assets/right man/Right Man 50-60.png" id="34_2wwrp"]
+[ext_resource type="Texture2D" uid="uid://bq2auwx678pnr" path="res://assets/right man/Right Man 60-70.png" id="35_1g0s3"]
+[ext_resource type="Texture2D" uid="uid://dupfh48rv4cv5" path="res://assets/right man/Right Man 70-80.png" id="36_7xwsd"]
+[ext_resource type="Texture2D" uid="uid://bk3rjyt8clht6" path="res://assets/right man/Right Man 80-90.png" id="37_gtl5f"]
+[ext_resource type="Texture2D" uid="uid://npwpgdi1oho4" path="res://assets/right man/Right Man 90-100.png" id="38_d3umf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hysgw"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(0, 0, 1478, 482)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l64ye"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(1478, 0, 1478, 482)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rohyw"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(2956, 0, 1478, 482)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilpo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hysgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l64ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rohyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d8mm"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(0, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th7mp"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(1440, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7kwb"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(2880, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7ls4"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(4320, 0, 1440, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hysgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d8mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th7mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7kwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7ls4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="IngameScene" type="Node2D" unique_id=1150025762]
+
+[node name="NodeExample" type="Sprite2D" parent="." unique_id=1745777263 groups=["Persist"]]
+position = Vector2(202, -73)
+texture = ExtResource("2_h1yxu")
+script = ExtResource("3_a5686")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=239435339]
+
+[node name="FadeOverlay" parent="UI" unique_id=134138849 instance=ExtResource("1_y6ebv")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" unique_id=696496564 instance=ExtResource("3_8o178")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="Gui-Control" type="Control" parent="." unique_id=517282870]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_2577t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Gui-Control" unique_id=2048233691]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.15
+anchor_top = 13.175
+anchor_right = 16.15
+anchor_bottom = 13.175
+offset_left = 337.0
+offset_top = 192.0
+offset_right = 419.0
+offset_bottom = 233.0
+scale = Vector2(1, 1.020739)
+text = "No"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" type="ProgressBar" parent="Gui-Control" unique_id=1238844547]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.05
+anchor_top = 11.35
+anchor_right = 7.05
+anchor_bottom = 11.35
+offset_left = 50.0
+offset_top = 267.0
+offset_right = 290.11572
+offset_bottom = 314.6529
+rotation = -1.5707964
+scale = Vector2(2.2829623, 2.3303087)
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar2" type="ProgressBar" parent="Gui-Control" unique_id=1536481294]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 23.100002
+anchor_top = 11.225001
+anchor_right = 23.100002
+anchor_bottom = 11.225001
+offset_left = 468.0
+offset_top = 273.0
+offset_right = 708.1157
+offset_bottom = 320.6529
+rotation = -1.5707964
+scale = Vector2(2.3677254, 2.4168296)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.825
+anchor_top = 5.65
+anchor_right = 9.825
+anchor_bottom = 5.65
+offset_left = 118.0
+offset_top = 36.0
+offset_right = 298.0
+offset_bottom = 124.0
+scale = Vector2(1.7459242, 1.8779699)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.0999994
+anchor_top = 14.9
+anchor_right = 7.1
+anchor_bottom = 14.9
+offset_left = 150.0
+offset_top = 187.0
+offset_right = 237.0
+offset_bottom = 232.0
+scale = Vector2(4.899101, 5.000703)
+text = "Yes"
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftTwin" type="Node2D" parent="Gui-Control" unique_id=1372043728]
+position = Vector2(1444.0001, 332.00003)
+scale = Vector2(1.5046302, 1.3663852)
+
+[node name="LeftGuy05" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=475143076]
+position = Vector2(-322.33835, 154.42204)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("6_5jhce")
+
+[node name="LeftGuy510" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=251786250]
+visible = false
+position = Vector2(-321.67377, 154.42203)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("7_lbq3s")
+
+[node name="LeftGuy1020" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1651887484]
+visible = false
+position = Vector2(-321.67377, 154.42204)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("8_2fmb7")
+
+[node name="LeftGuy2030" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1311748196]
+visible = false
+position = Vector2(-324.99692, 156.6176)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("9_x526a")
+
+[node name="LeftGuy3040" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=2017757876]
+visible = false
+position = Vector2(-323.66766, 153.69017)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("10_q6vb2")
+
+[node name="LeftGuy4050" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1954476140]
+visible = false
+position = Vector2(-323.003, 155.88576)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("11_104ws")
+
+[node name="LeftGuy5060" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=356820428]
+visible = false
+position = Vector2(-321.6738, 152.95831)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("12_qjnmd")
+
+[node name="LeftGuy6070" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1132542686]
+visible = false
+position = Vector2(-323.6676, 155.15387)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("14_ilpo5")
+
+[node name="LeftGuy7080" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=653923201]
+visible = false
+position = Vector2(-323.66763, 155.15388)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("14_i6xv3")
+
+[node name="LeftGuy8090" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=738586258]
+visible = false
+position = Vector2(-326.99075, 157.34946)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("15_diauj")
+
+[node name="LeftGuy90100" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=383928586]
+visible = false
+position = Vector2(-321.00916, 155.88574)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("16_c0xki")
+
+[node name="RightTwin" type="Node2D" parent="." unique_id=1096369104]
+position = Vector2(472, -411)
+
+[node name="RightMan05" type="Sprite2D" parent="RightTwin" unique_id=1500466972]
+visible = false
+position = Vector2(492, 957)
+texture = ExtResource("28_pmf6l")
+
+[node name="RightMan510" type="Sprite2D" parent="RightTwin" unique_id=1886487705]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("29_3egxp")
+
+[node name="RightMan1020" type="Sprite2D" parent="RightTwin" unique_id=761635797]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("30_fpum5")
+
+[node name="RightMan2030" type="Sprite2D" parent="RightTwin" unique_id=2004980755]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("31_fbq86")
+
+[node name="RightMan3040" type="Sprite2D" parent="RightTwin" unique_id=1322657131]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("32_er0xd")
+
+[node name="RightMan4050" type="Sprite2D" parent="RightTwin" unique_id=1365501008]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("33_pecm8")
+
+[node name="RightMan5060" type="Sprite2D" parent="RightTwin" unique_id=401841140]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("34_2wwrp")
+
+[node name="RightMan6070" type="Sprite2D" parent="RightTwin" unique_id=838406835]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("35_1g0s3")
+
+[node name="RightMan7080" type="Sprite2D" parent="RightTwin" unique_id=406988469]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("36_7xwsd")
+
+[node name="RightMan8090" type="Sprite2D" parent="RightTwin" unique_id=1236950031]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("37_gtl5f")
+
+[node name="RightMan90100" type="Sprite2D" parent="RightTwin" unique_id=1427196699]
+visible = false
+position = Vector2(486, 953)
+texture = ExtResource("38_d3umf")
+
+[node name="LeftHand2" type="Sprite2D" parent="." unique_id=970710767]
+z_index = 1
+position = Vector2(875, 1014)
+texture = ExtResource("7_ilpo5")
+offset = Vector2(40, 38)
+script = ExtResource("8_pxehq")
+
+[node name="OldLeftHand" type="Sprite2D" parent="." unique_id=2005705359]
+visible = false
+position = Vector2(1236, 382)
+texture = ExtResource("9_ilpo5")
+
+[node name="RightHandPointer" type="Sprite2D" parent="." unique_id=1156906571]
+visible = false
+position = Vector2(1319, 483)
+texture = ExtResource("10_pxehq")
+
+[node name="LeftHandPointer" type="Sprite2D" parent="." unique_id=1420558803]
+visible = false
+position = Vector2(1611, 646)
+texture = ExtResource("11_4d8mm")
+
+[node name="OldRightHand" type="Sprite2D" parent="." unique_id=1164687774]
+visible = false
+position = Vector2(1420, 481)
+texture = ExtResource("12_th7mp")
+
+[node name="RightHand" type="Sprite2D" parent="." unique_id=615680506]
+visible = false
+position = Vector2(1568, 314)
+texture = ExtResource("13_q7kwb")
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1731727389]
+
+[node name="NoButton" type="TextureButton" parent="Buttons" unique_id=774428504]
+offset_left = -78.0
+offset_top = 13.0
+offset_right = 1842.0
+offset_bottom = 1093.0
+texture_normal = ExtResource("15_th7mp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/NoButton" unique_id=938565431]
+visible = false
+position = Vector2(2015, 141)
+sprite_frames = SubResource("SpriteFrames_ilpo5")
+frame_progress = 0.2251306
+
+[node name="YesButton" type="TextureButton" parent="Buttons" unique_id=405309694]
+offset_left = -41.0
+offset_top = 5.0
+offset_right = 1879.0
+offset_bottom = 1085.0
+texture_normal = ExtResource("17_q7kwb")
+
+[node name="Background" type="Node2D" parent="." unique_id=1298617703]
+position = Vector2(0, -4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background" unique_id=1647369391]
+z_index = -2
+position = Vector2(959, 529)
+scale = Vector2(1.4333754, 1.4129297)
+sprite_frames = SubResource("SpriteFrames_hysgw")
+autoplay = "default"
+frame = 1
+frame_progress = 0.28004965
+speed_scale = 0.3
+
+[connection signal="pressed" from="Buttons/NoButton" to="Gui-Control" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Buttons/YesButton" to="Gui-Control" method="_on_button_pressed"]
