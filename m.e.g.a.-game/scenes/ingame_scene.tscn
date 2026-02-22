@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dupfh48rv4cv5" path="res://assets/right man/Right Man 70-80.png" id="36_7xwsd"]
 [ext_resource type="Texture2D" uid="uid://bk3rjyt8clht6" path="res://assets/right man/Right Man 80-90.png" id="37_gtl5f"]
 [ext_resource type="Texture2D" uid="uid://npwpgdi1oho4" path="res://assets/right man/Right Man 90-100.png" id="38_d3umf"]
+[ext_resource type="AudioStream" uid="uid://odr383d6qtjh" path="res://assets/SoundSfx/Chillenium Music/Stage 1 - Childhood (Loop).mp3" id="39_2fmb7"]
 
 [sub_resource type="BitMap" id="BitMap_lbq3s"]
 
@@ -433,6 +434,12 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.28004965
 speed_scale = 0.3
+
+[node name="childhoodMusic" type="AudioStreamPlayer2D" parent="." unique_id=1433336523]
+position = Vector2(437, 786)
+scale = Vector2(0.21022725, 0.21022725)
+stream = ExtResource("39_2fmb7")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/NoButton" to="Gui-Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Buttons/YesButton" to="Gui-Control" method="_on_button_pressed"]
