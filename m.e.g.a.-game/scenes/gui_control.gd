@@ -1,14 +1,4 @@
 extends Control
-#Change twins as you age up
-@onready var left_twin := $LeftTwin
-@onready var right_twin := get_node("../RightTwin")
-
-
-var left_twin_nodes: Dictionary = {}
-var right_twin_nodes: Dictionary = {}
-var last_left_key := ""
-var last_right_key := ""
-
 
 #initiralizing a Random Generator
 var rng = RandomNumberGenerator.new()
@@ -140,50 +130,24 @@ func _ready() -> void:
 	rng.randomize()
 	label.text = "Do you want to " + get_next_question() + "?"
 
-	left_twin_nodes = {
-		"0-5": left_twin.get_node("LeftGuy05"),
-		"6-10": left_twin.get_node("LeftGuy510"),
-		"11-20": left_twin.get_node("LeftGuy1020"),
-		"21-30": left_twin.get_node("LeftGuy2030"),
-		"31-40": left_twin.get_node("LeftGuy3040"),
-		"41-50": left_twin.get_node("LeftGuy4050"),
-		"51-60": left_twin.get_node("LeftGuy5060"),
-		"61-70": left_twin.get_node("LeftGuy6070"),
-		"71-80": left_twin.get_node("LeftGuy7080"),
-		"81-90": left_twin.get_node("LeftGuy8090"),
-		"91-100": left_twin.get_node("LeftGuy90100"),
-		}
-		
-	right_twin_nodes = {
-		"0-5": right_twin.get_node("RightMan05"),
-		"6-10": right_twin.get_node("RightMan510"),
-		"11-20": right_twin.get_node("RightMan1020"),
-		"21-30": right_twin.get_node("RightMan2030"),
-		"31-40": right_twin.get_node("RightMan3040"),	
-		"41-50": right_twin.get_node("RightMan4050"),
-		"51-60": right_twin.get_node("RightMan5060"),
-		"61-70": right_twin.get_node("RightMan6070"),
-		"71-80": right_twin.get_node("RightMan7080"),
-		"81-90": right_twin.get_node("RightMan8090"),
-		"91-100": right_twin.get_node("RightMan90100"),
-	}
-	update_portraits()
 
-func get_age_key_from(age_value: float) -> String:
-	if age_value <= 5: return "0-5"
-	if age_value <= 10: return "6-10"
-	if age_value <= 20: return "11-20"
-	if age_value <= 30: return "21-30"
-	if age_value <= 40: return "31-40"
-	if age_value <= 50: return "41-50"
-	if age_value <= 60: return "51-60"
-	if age_value <= 70: return "61-70"
-	if age_value <= 80: return "71-80"
-	if age_value <= 90: return "81-90"
+
+
+func get_age_key() -> String:
+	if health_bar.value <= 5: return "0-5"
+	if health_bar.value <= 10: return "6-10"
+	if health_bar.value <= 20: return "11-20"
+	if health_bar.value <= 30: return "21-30"
+	if health_bar.value <= 40: return "31-40"
+	if health_bar.value <= 50: return "41-50"
+	if health_bar.value <= 60: return "51-60"
+	if health_bar.value <= 70: return "61-70"
+	if health_bar.value <= 80: return "71-80"
+	if health_bar.value <= 90: return "81-90"
 	return "91-100"
 
 func get_next_question() -> String:
-	var key := get_age_key_from(health_bar.value)
+	var key = get_age_key()
 	var pool = question_data[key]
 	current_question = pool.pick_random()
 	return current_question["text"]
@@ -243,57 +207,3 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	process_turn("no")
-	YearsAffcecting = current_question["yes"] * get_random_volatility()
-		
-	health_bar.value += 1 
-	update_portraits()
-	if health_bar.value >= ExpectedDeath:
-		print("You have died")
-	
-	Botmodifier = [1, -1].pick_random() 
-	BotYearsAffcecting = Botmodifier *  get_random_volatility()
-	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
-	health_bar2.value += 1 
-	update_portraits()
-	
-	if ExpectedDeath - health_bar.value <= 5:
-		health_bar.modulate = Color.RED
-	else:
-		health_bar.modulate = Color.WHITE
-		
-	if ExpectedDeath >= 100:
-		ExpectedDeath = 100
-		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
-	else:
-		ExpectedDeath += YearsAffcecting
-		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-
-
-
-func _on_button_2_pressed() -> void:
-	YearsAffcecting = current_question["no"] * get_random_volatility()
-	ExpectedDeath += YearsAffcecting
-		
-	label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-	health_bar.value += 1 
-	update_portraits()
-	Botmodifier = [1, -1].pick_random() 
-	BotYearsAffcecting = Botmodifier *  get_random_volatility()
-	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
-	health_bar2.value += 1 
-			
-	if ExpectedDeath >= 100:
-		ExpectedDeath = 100
-		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
-	else:
-		ExpectedDeath += YearsAffcecting
-		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-
-
-	if health_bar.value >= ExpectedDeath:
-		print("You have died")
-	print("then no button has been pressed!")
-
-
-func _on_no_button_pressed() -> void:
-	pass # Replace with function body.
