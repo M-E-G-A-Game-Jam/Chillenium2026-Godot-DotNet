@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bta5etl1p85nf" path="res://assets/left and right hands/Right Hand.png" id="13_q7kwb"]
 [ext_resource type="Texture2D" uid="uid://dn3lwktkrfkrk" path="res://assets/left guy/left guy/Left Guy 60-70.png" id="14_ilpo5"]
 [ext_resource type="Texture2D" uid="uid://1r5d0itj8ilm" path="res://assets/bg1_sprite_sheet.png" id="15_pxehq"]
-[ext_resource type="Texture2D" uid="uid://yc6pi4lhmoee" path="res://assets/no1.png" id="15_th7mp"]
 [ext_resource type="Texture2D" uid="uid://cwtmojyp5gek" path="res://assets/no_sprite_sheet.png" id="16_q7kwb"]
 [ext_resource type="Texture2D" uid="uid://bu37ifm7pid77" path="res://assets/yesbutton.png" id="17_q7kwb"]
 
@@ -47,6 +46,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th7mp"]
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d8mm"]
 atlas = ExtResource("15_pxehq")
@@ -110,78 +112,68 @@ offset_bottom = 40.0
 script = ExtResource("5_2577t")
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="Gui-Control" unique_id=2048233691]
+[node name="Button2" type="TextureButton" parent="Gui-Control" unique_id=230525939]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 16.025
-anchor_top = 9.327893
-anchor_right = 16.025
-anchor_bottom = 9.327893
+anchor_left = 15.875
+anchor_top = 8.925
+anchor_right = 24.775
+anchor_bottom = 19.019396
 offset_left = 337.0
 offset_top = 192.0
 offset_right = 419.0
 offset_bottom = 233.0
 scale = Vector2(1, 1.020739)
-text = "No"
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Gui-Control/Button2" unique_id=1967563781]
+position = Vector2(629, 267.3399)
+sprite_frames = SubResource("SpriteFrames_ilpo5")
+frame_progress = 0.2251306
 
 [node name="HealthBar" type="ProgressBar" parent="Gui-Control" unique_id=1238844547]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 16.025
-anchor_top = 9.327893
-anchor_right = 16.025
-anchor_bottom = 9.327893
+anchor_left = 3.7
+anchor_top = 10.350001
+anchor_right = 3.7
+anchor_bottom = 10.350001
 offset_left = 50.0
 offset_top = 267.0
 offset_right = 290.11572
 offset_bottom = 314.6529
 rotation = -1.5707964
-scale = Vector2(1, 1.020739)
+scale = Vector2(1.7925662, 2.2996962)
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar2" type="ProgressBar" parent="Gui-Control" unique_id=1536481294]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 16.025
-anchor_top = 9.327893
-anchor_right = 16.025
-anchor_bottom = 9.327893
+anchor_left = 28.475
+anchor_top = 10.225
+anchor_right = 28.475
+anchor_bottom = 10.225
 offset_left = 468.0
 offset_top = 273.0
 offset_right = 708.1157
 offset_bottom = 320.6529
 rotation = -1.5707964
-scale = Vector2(1, 1.020739)
+scale = Vector2(1.7925746, 2.2996948)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
+[node name="Button" type="TextureButton" parent="Gui-Control" unique_id=1642735804]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 16.025
-anchor_top = 9.327893
-anchor_right = 16.025
-anchor_bottom = 9.327893
-offset_left = 118.0
-offset_top = 36.0
-offset_right = 298.0
-offset_bottom = 124.0
-scale = Vector2(1, 1.020739)
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 16.025
-anchor_top = 9.327893
-anchor_right = 16.025
-anchor_bottom = 9.327893
+anchor_left = 6.4
+anchor_top = 14.0
+anchor_right = 16.1
+anchor_bottom = 19.095982
 offset_left = 150.0
 offset_top = 187.0
 offset_right = 237.0
 offset_bottom = 232.0
 scale = Vector2(1, 1.020739)
-text = "Yes"
+texture_normal = ExtResource("17_q7kwb")
 metadata/_edit_use_anchors_ = true
 
 [node name="Twins" type="Node2D" parent="Gui-Control" unique_id=1372043728]
@@ -192,6 +184,32 @@ scale = Vector2(1.5046302, 1.3663852)
 position = Vector2(-315.02765, 150.76276)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("6_5jhce")
+
+[node name="PanelContainer" type="PanelContainer" parent="Gui-Control" unique_id=1031638424]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 235.99998
+offset_right = 441.0
+offset_bottom = 276.0
+scale = Vector2(27.604277, 11.201539)
+
+[node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.87499845
+anchor_top = 7.625001
+anchor_right = 2.8499985
+anchor_bottom = 7.625001
+offset_left = 421.0
+offset_top = -24.0
+offset_right = 461.0
+offset_bottom = 103.0
+scale = Vector2(1.6103036, 1.7004985)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_th7mp")
+text = "Yes or No chat?"
+vertical_alignment = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="LeftHand2" type="Sprite2D" parent="." unique_id=970710767]
 z_index = 1
@@ -229,34 +247,13 @@ texture = ExtResource("13_q7kwb")
 position = Vector2(964, 540)
 texture = ExtResource("14_ilpo5")
 
-[node name="Buttons" type="Node2D" parent="." unique_id=1731727389]
-
-[node name="NoButton" type="TextureButton" parent="Buttons" unique_id=774428504]
-offset_left = -78.0
-offset_top = 13.0
-offset_right = 1842.0
-offset_bottom = 1093.0
-texture_normal = ExtResource("15_th7mp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/NoButton" unique_id=938565431]
-visible = false
-position = Vector2(2015, 141)
-sprite_frames = SubResource("SpriteFrames_ilpo5")
-frame_progress = 0.2251306
-
-[node name="YesButton" type="TextureButton" parent="Buttons" unique_id=405309694]
-offset_left = -41.0
-offset_top = 5.0
-offset_right = 1879.0
-offset_bottom = 1085.0
-texture_normal = ExtResource("17_q7kwb")
-
 [node name="Background" type="Node2D" parent="." unique_id=1298617703]
 position = Vector2(0, -4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background" unique_id=1647369391]
 z_index = -2
 position = Vector2(959, 529)
+rotation = 0.0017123137
 scale = Vector2(1.4333754, 1.4129297)
 sprite_frames = SubResource("SpriteFrames_hysgw")
 autoplay = "default"
