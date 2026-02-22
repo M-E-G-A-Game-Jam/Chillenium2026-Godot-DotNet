@@ -8,8 +8,8 @@ A submission for Chillenium 2026.
 ## 👥 The Team
 * **@iwasella** - Software Developer
 * **@gherbert3** - Software Developer
-* **@mmarkie17-gj** - Concept Artist
-* **apento4** - Sound Engineer
+* **@apento4** - Concept Artist
+* **@mmarkie17-gj** - Sound Engineer
 
 ## 🛠️ Tech Stack
 * **Engine:** Godot 4.x (.NET)
