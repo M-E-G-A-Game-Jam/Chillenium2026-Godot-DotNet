@@ -124,7 +124,9 @@ func _ready() -> void:
 	health_bar.value = 1
 	health_bar2.max_value = 100
 	health_bar2.value = 1
-	ExpectedDeath = health_bar.max_value
+	ExpectedDeath = 70 # Start with a reasonable baseline
+	BotExpectedDeath = 70
+	
 	rng.randomize()
 	label.text = "Do you want to " + get_next_question() + "?"
 
@@ -161,54 +163,47 @@ func get_random_volatility() -> int:
 		intensity = randf_range(1,3)
 	return intensity
 	
+func win_game():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # Untrap the mouse
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+
+func lose_game():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # Ensure they can click 'Retry'
+	get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
+
+func check_game_status():
+	# Player Wins when bot dies
+	if health_bar2.value >= BotExpectedDeath:
+		win_game()
+	# Player Loses is they die fiurst 
+	elif health_bar.value >= ExpectedDeath:
+		lose_game()
+func process_turn(choice_key: String):
+	# 1. Update Player
+	YearsAffcecting = current_question[choice_key] * get_random_volatility()
+	ExpectedDeath = clamp(ExpectedDeath + YearsAffcecting, 1, 100)
+	health_bar.value += 1
 	
+	# 2. Update Bot (Simulating their turn)
+	var bot_choice_mod = [1, -1].pick_random()
+	var bot_vol = get_random_volatility()
+	BotExpectedDeath = clamp(BotExpectedDeath + (bot_vol * bot_choice_mod), 1, 100)
+	health_bar2.value += 1
+	
+	# 3. Update Visuals
+	health_bar.modulate = Color.RED if (ExpectedDeath - health_bar.value <= 5) else Color.WHITE
+	
+	var next_q = get_next_question()
+	var status_text = "You gained/lost " + str(YearsAffcecting) + " expected years.\n"
+	status_text += "Next: " + next_q + "\n"
+	status_text += "Death Age: " + str(ExpectedDeath) + " | Your Age: " + str(health_bar.value)
+	label.text = status_text
+	
+	# 4. FINALLY: Check if someone died
+	check_game_status()
 
 func _on_button_pressed() -> void:
-	YearsAffcecting = current_question["yes"] * get_random_volatility()
-		
-	health_bar.value += 1 
-	if health_bar.value >= ExpectedDeath:
-		print("You have died")
-	
-	Botmodifier = [1, -1].pick_random() 
-	BotYearsAffcecting = Botmodifier *  get_random_volatility()
-	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
-	health_bar2.value += 1 
-	
-	if ExpectedDeath - health_bar.value <= 5:
-		health_bar.modulate = Color.RED
-	else:
-		health_bar.modulate = Color.WHITE
-		
-	if ExpectedDeath >= 100:
-		ExpectedDeath = 100
-		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
-	else:
-		ExpectedDeath += YearsAffcecting
-		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-
-
+	process_turn("yes")
 
 func _on_button_2_pressed() -> void:
-	YearsAffcecting = current_question["no"] * get_random_volatility()
-	ExpectedDeath += YearsAffcecting
-		
-	label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-	health_bar.value += 1 
-	
-	Botmodifier = [1, -1].pick_random() 
-	BotYearsAffcecting = Botmodifier *  get_random_volatility()
-	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
-	health_bar2.value += 1 
-			
-	if ExpectedDeath >= 100:
-		ExpectedDeath = 100
-		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
-	else:
-		ExpectedDeath += YearsAffcecting
-		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
-
-
-	if health_bar.value >= ExpectedDeath:
-		print("You have died")
-	print("then no button has been pressed!")
+	process_turn("no")

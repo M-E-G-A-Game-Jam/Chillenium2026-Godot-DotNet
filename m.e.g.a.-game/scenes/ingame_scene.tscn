@@ -211,6 +211,27 @@ text = "Yes or No chat?"
 vertical_alignment = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="Label2" type="Label" parent="Gui-Control" unique_id=1085143187]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 113.0
+offset_right = 218.0
+offset_bottom = 162.0
+scale = Vector2(2.8809297, 3.1206782)
+text = "Ur life out of 100 years
+possible"
+
+[node name="Label3" type="Label" parent="Gui-Control" unique_id=43007656]
+layout_mode = 0
+offset_left = 1320.0001
+offset_top = 122.00001
+offset_right = 1513.0001
+offset_bottom = 171.0
+scale = Vector2(2.8809297, 3.1206782)
+text = "Twin life out of 100 years
+possible"
+horizontal_alignment = 2
+
 [node name="LeftHand2" type="Sprite2D" parent="." unique_id=970710767]
 z_index = 1
 position = Vector2(875, 1014)
