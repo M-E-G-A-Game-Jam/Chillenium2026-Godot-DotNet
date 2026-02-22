@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://diuyt8awvpmiv"]
+
+[node name="WinScreen" type="Node2D" unique_id=556386372]
+
+[node name="Label" type="Label" parent="." unique_id=67519538]
+offset_left = 424.0
+offset_top = 428.0
+offset_right = 464.0
+offset_bottom = 451.0
+scale = Vector2(37.46681, 24.495653)
+text = "You win"
