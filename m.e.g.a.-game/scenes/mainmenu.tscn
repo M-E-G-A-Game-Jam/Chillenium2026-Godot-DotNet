@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://fuim2s8ok3v0"]
+
+[ext_resource type="Texture2D" uid="uid://jrhr4g1h423k" path="res://assets/background.png" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://cq0032lvcpexp" path="res://assets/Start1.png" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://b3bvhfo60hwb2" path="res://assets/Right Foreground Clouds copy.png" id="2_lidg2"]
+[ext_resource type="Texture2D" uid="uid://qdhdmqetnaq3" path="res://assets/Left Foreground Clouds copy.png" id="2_qrn07"]
+[ext_resource type="Texture2D" uid="uid://bx40mcvcxwlvb" path="res://assets/startspritesheet.png" id="3_wgsso"]
+[ext_resource type="Texture2D" uid="uid://c3tueqessiv7g" path="res://assets/Exit1.png" id="5_7uvds"]
+[ext_resource type="Texture2D" uid="uid://cjtxj8uxy7lgo" path="res://assets/endspritesheet.png" id="6_at6rn"]
+[ext_resource type="Texture2D" uid="uid://iuoog753qrbh" path="res://assets/Guy Laying Down Left.png" id="6_qy7ti"]
+[ext_resource type="Texture2D" uid="uid://bs5iu4o4mfjp7" path="res://assets/Options1.png" id="7_dihg0"]
+[ext_resource type="Texture2D" uid="uid://c163ftxy7v6qa" path="res://assets/optionspritesheet.png" id="8_rqglp"]
+[ext_resource type="Texture2D" uid="uid://1mmsu1p7peuq" path="res://assets/Background Clouds.png" id="9_rqglp"]
+[ext_resource type="Texture2D" uid="uid://ucr71nboowlm" path="res://assets/Sun.png" id="10_0y70q"]
+[ext_resource type="Texture2D" uid="uid://dx80q27ug6716" path="res://assets/Right Foreground Clouds.png" id="12_wrxld"]
+[ext_resource type="Texture2D" uid="uid://clp8b85teukfo" path="res://assets/Left Foreground Clouds.png" id="13_bhvcy"]
+[ext_resource type="Script" uid="uid://t7vt4x5ps1ky" path="res://scenes/start_button.gd" id="15_5diu1"]
+[ext_resource type="Texture2D" uid="uid://byyfvdxf7fpmw" path="res://assets/stormy sky.png" id="15_hr4ih"]
+[ext_resource type="Texture2D" uid="uid://dhmlseidnsrrh" path="res://assets/Lightning copy.png" id="16_xcgji"]
+[ext_resource type="Texture2D" uid="uid://cpoqf2eb2qcrm" path="res://assets/Lightning copy 2.png" id="17_f1hcs"]
+[ext_resource type="Script" uid="uid://c34mxkgkip0ii" path="res://scenes/end_button.gd" id="18_c50wd"]
+[ext_resource type="Texture2D" uid="uid://dyytahl34mu3q" path="res://assets/Foreground Storm Clouds.png" id="18_pg2s2"]
+[ext_resource type="Texture2D" uid="uid://cv400idd2o5cw" path="res://assets/Background Clouds copy.png" id="19_xmgyx"]
+[ext_resource type="Texture2D" uid="uid://ba0t62cscfnlv" path="res://assets/Lightning.png" id="20_blghb"]
+[ext_resource type="Texture2D" uid="uid://bluxl4lfw12yc" path="res://assets/Nah, I'd Live..png" id="21_f1hcs"]
+[ext_resource type="Script" uid="uid://ct28mwrcg0hlt" path="res://scenes/options_button.gd" id="21_kcrt3"]
+[ext_resource type="Texture2D" uid="uid://cqdhvfwpsw38s" path="res://assets/Speech Bubble Left.png" id="22_pg2s2"]
+[ext_resource type="Texture2D" uid="uid://cgl4hetwrcvyi" path="res://assets/Speech Bubble Right.png" id="23_blghb"]
+[ext_resource type="Texture2D" uid="uid://b4oums14klwy5" path="res://assets/Guy Laying Down Right.png" id="24_ueaqd"]
+[ext_resource type="Texture2D" uid="uid://byrkgh1ktkne" path="res://assets/Nah, I'd Die..png" id="25_wrxld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igs2m"]
+atlas = ExtResource("3_wgsso")
+region = Rect2(0, 0, 566, 327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pujl"]
+atlas = ExtResource("3_wgsso")
+region = Rect2(566, 0, 566, 327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uvds"]
+atlas = ExtResource("3_wgsso")
+region = Rect2(1132, 0, 566, 327)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dihg0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igs2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pujl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uvds")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndr1n"]
+atlas = ExtResource("6_at6rn")
+region = Rect2(21, 0, 478, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mpwi"]
+atlas = ExtResource("6_at6rn")
+region = Rect2(499, 0, 478, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smgxo"]
+atlas = ExtResource("6_at6rn")
+region = Rect2(977, 0, 478, 297)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqglp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndr1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mpwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smgxo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y70q"]
+atlas = ExtResource("8_rqglp")
+region = Rect2(0, 0, 530, 327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrn07"]
+atlas = ExtResource("8_rqglp")
+region = Rect2(530, 0, 530, 327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lidg2"]
+atlas = ExtResource("8_rqglp")
+region = Rect2(1060, 0, 530, 327)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_raimv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y70q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrn07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lidg2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Menu" type="Control" unique_id=616150598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NormalCloudGroup" type="Node2D" parent="." unique_id=511013578]
+
+[node name="Background" type="Sprite2D" parent="NormalCloudGroup" unique_id=407633036]
+position = Vector2(1066.0001, 562)
+scale = Vector2(2.2366953, 2.4195194)
+texture = ExtResource("1_cmhrf")
+
+[node name="RightForegroundCloudsCopy" type="Sprite2D" parent="NormalCloudGroup" unique_id=617313184]
+z_index = 1
+position = Vector2(936.99994, 542.99994)
+scale = Vector2(1.0241214, 0.99278116)
+texture = ExtResource("2_lidg2")
+
+[node name="LeftForegroundCloudsCopy" type="Sprite2D" parent="NormalCloudGroup" unique_id=1431296590]
+z_index = 1
+position = Vector2(958, 540)
+scale = Vector2(0.9999997, 0.9999998)
+texture = ExtResource("2_qrn07")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="NormalCloudGroup" unique_id=94649840]
+top_level = true
+position = Vector2(957, 835)
+scale = Vector2(1.0031965, 1)
+texture = ExtResource("9_rqglp")
+
+[node name="Sun" type="Sprite2D" parent="NormalCloudGroup" unique_id=1609429882]
+position = Vector2(135.99988, 148.99997)
+scale = Vector2(1.1221199, 1.0088688)
+texture = ExtResource("10_0y70q")
+
+[node name="StormCloudGroup" type="Node2D" parent="." unique_id=371885522]
+visible = false
+position = Vector2(1066.0001, 562)
+scale = Vector2(2.2366953, 2.4195194)
+
+[node name="BackgroundDark" type="Sprite2D" parent="StormCloudGroup" unique_id=682733466]
+position = Vector2(-83.158455, 4.9596653)
+scale = Vector2(0.55794543, 0.4794722)
+texture = ExtResource("15_hr4ih")
+
+[node name="LightningStrike02" type="Sprite2D" parent="StormCloudGroup" unique_id=1240552779]
+position = Vector2(172.57596, -164.49548)
+scale = Vector2(0.28800446, 0.28800446)
+texture = ExtResource("16_xcgji")
+
+[node name="LightningStrike03" type="Sprite2D" parent="StormCloudGroup" unique_id=319548329]
+position = Vector2(-374.21286, -86.38079)
+scale = Vector2(0.40380695, 0.3914084)
+texture = ExtResource("17_f1hcs")
+
+[node name="LightningStrike01" type="Sprite2D" parent="StormCloudGroup" unique_id=906514231]
+position = Vector2(337.10437, -84.72757)
+scale = Vector2(0.43034792, 0.43034786)
+texture = ExtResource("20_blghb")
+
+[node name="UpperClouds" type="Sprite2D" parent="StormCloudGroup" unique_id=2121110459]
+position = Vector2(-25.931171, -177.30794)
+scale = Vector2(0.47552946, 0.40324077)
+texture = ExtResource("18_pg2s2")
+
+[node name="LowerClouds" type="Sprite2D" parent="StormCloudGroup" unique_id=432037702]
+position = Vector2(-42.47342, 118.61861)
+scale = Vector2(0.4496432, 0.3843154)
+texture = ExtResource("19_xmgyx")
+
+[node name="RightForegroundClouds" type="Sprite2D" parent="StormCloudGroup" unique_id=2004917497]
+position = Vector2(292.84268, 147.96327)
+scale = Vector2(0.44708815, 0.4133052)
+texture = ExtResource("12_wrxld")
+
+[node name="LeftForegroundClouds" type="Sprite2D" parent="StormCloudGroup" unique_id=1258221465]
+z_index = 1
+position = Vector2(-291.9486, 151.68301)
+scale = Vector2(0.44708815, 0.4133052)
+texture = ExtResource("13_bhvcy")
+
+[node name="Buttons" type="Node2D" parent="." unique_id=834675308]
+
+[node name="startButton" type="TextureButton" parent="Buttons" unique_id=157635092]
+top_level = true
+offset_left = 256.0
+offset_top = 381.0
+offset_right = 782.0
+offset_bottom = 624.0
+texture_normal = ExtResource("2_d2nv2")
+script = ExtResource("15_5diu1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/startButton" unique_id=1402395098]
+position = Vector2(261.0164, 130.923)
+rotation = 0.00679343
+scale = Vector2(1.0497714, 1.1760781)
+sprite_frames = SubResource("SpriteFrames_dihg0")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.21952282
+speed_scale = 0.3
+
+[node name="endButton" type="TextureButton" parent="Buttons" unique_id=588010456]
+top_level = true
+offset_left = 1059.0
+offset_top = 387.0
+offset_right = 1520.0
+offset_bottom = 629.0
+texture_normal = ExtResource("5_7uvds")
+script = ExtResource("18_c50wd")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/endButton" unique_id=2110507428]
+position = Vector2(233.1994, 127.918594)
+scale = Vector2(1.1693108, 1.2726656)
+sprite_frames = SubResource("SpriteFrames_rqglp")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.3
+
+[node name="optionsButton" type="TextureButton" parent="Buttons" unique_id=1381104240]
+top_level = true
+offset_left = 633.0
+offset_top = 787.0
+offset_right = 1126.0
+offset_bottom = 1051.0
+texture_normal = ExtResource("7_dihg0")
+script = ExtResource("21_kcrt3")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/optionsButton" unique_id=1064092112]
+position = Vector2(269.7072, 139.22632)
+scale = Vector2(1.1015748, 1.0242991)
+sprite_frames = SubResource("SpriteFrames_raimv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.93809867
+speed_scale = 0.3
+
+[node name="StartGuyGroup" type="Node2D" parent="." unique_id=959748159]
+
+[node name="GuyLayingDownLeft" type="Sprite2D" parent="StartGuyGroup" unique_id=1278557078]
+z_index = 1
+position = Vector2(402.00003, 340)
+rotation = -0.12013597
+texture = ExtResource("6_qy7ti")
+
+[node name="Nah,I\'dLive_" type="Sprite2D" parent="StartGuyGroup" unique_id=2146501207]
+z_index = 1
+position = Vector2(711.00006, 165)
+scale = Vector2(0.7058369, 0.7058369)
+texture = ExtResource("21_f1hcs")
+
+[node name="SpeechBubbleLeft" type="Sprite2D" parent="StartGuyGroup" unique_id=2130554831]
+position = Vector2(663, 173)
+scale = Vector2(0.6898721, 0.6898721)
+texture = ExtResource("22_pg2s2")
+
+[node name="ExitGuyGroup" type="Node2D" parent="." unique_id=278410025]
+
+[node name="SpeechBubbleRight" type="Sprite2D" parent="ExitGuyGroup" unique_id=1129745835]
+position = Vector2(1225.0001, 202)
+scale = Vector2(0.6130533, 0.6130533)
+texture = ExtResource("23_blghb")
+
+[node name="GuyLayingDownRight" type="Sprite2D" parent="ExitGuyGroup" unique_id=751455660]
+position = Vector2(1474, 336)
+texture = ExtResource("24_ueaqd")
+
+[node name="Nah,I\'dDie_" type="Sprite2D" parent="ExitGuyGroup" unique_id=687522186]
+position = Vector2(1197, 196)
+scale = Vector2(0.76535594, 0.76535594)
+texture = ExtResource("25_wrxld")
+
+[connection signal="mouse_entered" from="Buttons/startButton" to="Buttons/startButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/startButton" to="Buttons/startButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/startButton" to="Buttons/startButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/endButton" to="Buttons/endButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/endButton" to="Buttons/endButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/endButton" to="Buttons/endButton" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/optionsButton" to="Buttons/optionsButton" method="_on_pressed"]
