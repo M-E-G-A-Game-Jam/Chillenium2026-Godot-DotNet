@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var min_x := 800.0
+@export var min_x := 700.0
 @export var max_x := 1500.0
 @export var min_y := 700.0
 @export var max_y := 1650.0
