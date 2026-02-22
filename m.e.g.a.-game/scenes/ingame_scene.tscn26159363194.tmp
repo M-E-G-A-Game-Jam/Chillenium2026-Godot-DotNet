@@ -39,8 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://bk3rjyt8clht6" path="res://assets/right man/Right Man 80-90.png" id="37_gtl5f"]
 [ext_resource type="Texture2D" uid="uid://npwpgdi1oho4" path="res://assets/right man/Right Man 90-100.png" id="38_d3umf"]
 
-[sub_resource type="BitMap" id="BitMap_lbq3s"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hysgw"]
 atlas = ExtResource("16_q7kwb")
 region = Rect2(0, 0, 1478, 482)
@@ -64,21 +62,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rohyw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbq3s"]
-atlas = ExtResource("17_q7kwb")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2fmb7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lbq3s")
 }],
 "loop": true,
 "name": &"default",
@@ -295,6 +278,7 @@ texture = ExtResource("16_c0xki")
 position = Vector2(472, -411)
 
 [node name="RightMan05" type="Sprite2D" parent="RightTwin" unique_id=1500466972]
+visible = false
 position = Vector2(492, 957)
 texture = ExtResource("28_pmf6l")
 
@@ -383,43 +367,24 @@ texture = ExtResource("13_q7kwb")
 [node name="Buttons" type="Node2D" parent="." unique_id=1731727389]
 
 [node name="NoButton" type="TextureButton" parent="Buttons" unique_id=774428504]
-offset_left = 1080.0001
-offset_top = 767.00006
-offset_right = 3000.0
-offset_bottom = 1847.0
-scale = Vector2(0.20892757, 0.20892757)
-size_flags_vertical = 3
+offset_left = -78.0
+offset_top = 13.0
+offset_right = 1842.0
+offset_bottom = 1093.0
 texture_normal = ExtResource("15_th7mp")
-texture_click_mask = SubResource("BitMap_lbq3s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/NoButton" unique_id=938565431]
+visible = false
+position = Vector2(2015, 141)
+sprite_frames = SubResource("SpriteFrames_ilpo5")
+frame_progress = 0.2251306
 
 [node name="YesButton" type="TextureButton" parent="Buttons" unique_id=405309694]
-offset_left = 437.0
-offset_top = 786.0
-offset_right = 2357.0
-offset_bottom = 1866.0
-scale = Vector2(0.21022725, 0.21022725)
+offset_left = -41.0
+offset_top = 5.0
+offset_right = 1879.0
+offset_bottom = 1085.0
 texture_normal = ExtResource("17_q7kwb")
-
-[node name="TextureButton" type="TextureButton" parent="Buttons" unique_id=2142519019]
-offset_left = 1491.0
-offset_top = 771.00006
-offset_right = 1531.0
-offset_bottom = 811.00006
-scale = Vector2(10.479589, 5.2939925)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/TextureButton" unique_id=938565431]
-position = Vector2(21.729782, 9.504391)
-scale = Vector2(0.09922279, 0.19800813)
-sprite_frames = SubResource("SpriteFrames_ilpo5")
-
-[node name="TextureButton2" type="TextureButton" parent="Buttons" unique_id=965449774]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/TextureButton2" unique_id=2013656569]
-position = Vector2(930.00006, 545)
-scale = Vector2(1.0272243, 1.0272243)
-sprite_frames = SubResource("SpriteFrames_2fmb7")
 
 [node name="Background" type="Node2D" parent="." unique_id=1298617703]
 position = Vector2(0, -4)

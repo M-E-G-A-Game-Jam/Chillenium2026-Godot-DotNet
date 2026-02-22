@@ -39,8 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://bk3rjyt8clht6" path="res://assets/right man/Right Man 80-90.png" id="37_gtl5f"]
 [ext_resource type="Texture2D" uid="uid://npwpgdi1oho4" path="res://assets/right man/Right Man 90-100.png" id="38_d3umf"]
 
-[sub_resource type="BitMap" id="BitMap_lbq3s"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hysgw"]
 atlas = ExtResource("16_q7kwb")
 region = Rect2(0, 0, 1478, 482)
@@ -64,21 +62,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rohyw")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbq3s"]
-atlas = ExtResource("17_q7kwb")
-region = Rect2(0, 0, 1920, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2fmb7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lbq3s")
 }],
 "loop": true,
 "name": &"default",
@@ -227,126 +210,59 @@ position = Vector2(1444.0001, 332.00003)
 scale = Vector2(1.5046302, 1.3663852)
 
 [node name="LeftGuy05" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=475143076]
-position = Vector2(-322.33835, 154.42204)
+position = Vector2(-318.3507, 150.76276)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("6_5jhce")
 
 [node name="LeftGuy510" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=251786250]
-visible = false
-position = Vector2(-321.67377, 154.42203)
+position = Vector2(-319.67993, 155.88574)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("7_lbq3s")
 
 [node name="LeftGuy1020" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1651887484]
-visible = false
-position = Vector2(-321.67377, 154.42204)
+position = Vector2(-319.67993, 152.22647)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("8_2fmb7")
 
 [node name="LeftGuy2030" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1311748196]
-visible = false
-position = Vector2(-324.99692, 156.6176)
+position = Vector2(-323.003, 150.76274)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("9_x526a")
 
 [node name="LeftGuy3040" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=2017757876]
-visible = false
-position = Vector2(-323.66766, 153.69017)
+position = Vector2(-321.67383, 154.42203)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("10_q6vb2")
 
 [node name="LeftGuy4050" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1954476140]
-visible = false
 position = Vector2(-323.003, 155.88576)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("11_104ws")
 
 [node name="LeftGuy5060" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=356820428]
-visible = false
-position = Vector2(-321.6738, 152.95831)
+position = Vector2(-319.67996, 150.76274)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("12_qjnmd")
 
 [node name="LeftGuy6070" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=1132542686]
-visible = false
 position = Vector2(-323.6676, 155.15387)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("14_ilpo5")
 
 [node name="LeftGuy7080" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=653923201]
-visible = false
-position = Vector2(-323.66763, 155.15388)
+position = Vector2(-319.67993, 155.88574)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("14_i6xv3")
 
 [node name="LeftGuy8090" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=738586258]
-visible = false
-position = Vector2(-326.99075, 157.34946)
+position = Vector2(-323.003, 150.76274)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("15_diauj")
 
 [node name="LeftGuy90100" type="Sprite2D" parent="Gui-Control/LeftTwin" unique_id=383928586]
-visible = false
 position = Vector2(-321.00916, 155.88574)
 scale = Vector2(0.66461515, 0.7318581)
 texture = ExtResource("16_c0xki")
-
-[node name="RightTwin" type="Node2D" parent="." unique_id=1096369104]
-position = Vector2(472, -411)
-
-[node name="RightMan05" type="Sprite2D" parent="RightTwin" unique_id=1500466972]
-position = Vector2(492, 957)
-texture = ExtResource("28_pmf6l")
-
-[node name="RightMan510" type="Sprite2D" parent="RightTwin" unique_id=1886487705]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("29_3egxp")
-
-[node name="RightMan1020" type="Sprite2D" parent="RightTwin" unique_id=761635797]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("30_fpum5")
-
-[node name="RightMan2030" type="Sprite2D" parent="RightTwin" unique_id=2004980755]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("31_fbq86")
-
-[node name="RightMan3040" type="Sprite2D" parent="RightTwin" unique_id=1322657131]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("32_er0xd")
-
-[node name="RightMan4050" type="Sprite2D" parent="RightTwin" unique_id=1365501008]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("33_pecm8")
-
-[node name="RightMan5060" type="Sprite2D" parent="RightTwin" unique_id=401841140]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("34_2wwrp")
-
-[node name="RightMan6070" type="Sprite2D" parent="RightTwin" unique_id=838406835]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("35_1g0s3")
-
-[node name="RightMan7080" type="Sprite2D" parent="RightTwin" unique_id=406988469]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("36_7xwsd")
-
-[node name="RightMan8090" type="Sprite2D" parent="RightTwin" unique_id=1236950031]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("37_gtl5f")
-
-[node name="RightMan90100" type="Sprite2D" parent="RightTwin" unique_id=1427196699]
-visible = false
-position = Vector2(486, 953)
-texture = ExtResource("38_d3umf")
 
 [node name="LeftHand2" type="Sprite2D" parent="." unique_id=970710767]
 z_index = 1
@@ -383,43 +299,24 @@ texture = ExtResource("13_q7kwb")
 [node name="Buttons" type="Node2D" parent="." unique_id=1731727389]
 
 [node name="NoButton" type="TextureButton" parent="Buttons" unique_id=774428504]
-offset_left = 1080.0001
-offset_top = 767.00006
-offset_right = 3000.0
-offset_bottom = 1847.0
-scale = Vector2(0.20892757, 0.20892757)
-size_flags_vertical = 3
+offset_left = -78.0
+offset_top = 13.0
+offset_right = 1842.0
+offset_bottom = 1093.0
 texture_normal = ExtResource("15_th7mp")
-texture_click_mask = SubResource("BitMap_lbq3s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/NoButton" unique_id=938565431]
+visible = false
+position = Vector2(2015, 141)
+sprite_frames = SubResource("SpriteFrames_ilpo5")
+frame_progress = 0.2251306
 
 [node name="YesButton" type="TextureButton" parent="Buttons" unique_id=405309694]
-offset_left = 437.0
-offset_top = 786.0
-offset_right = 2357.0
-offset_bottom = 1866.0
-scale = Vector2(0.21022725, 0.21022725)
+offset_left = -41.0
+offset_top = 5.0
+offset_right = 1879.0
+offset_bottom = 1085.0
 texture_normal = ExtResource("17_q7kwb")
-
-[node name="TextureButton" type="TextureButton" parent="Buttons" unique_id=2142519019]
-offset_left = 1491.0
-offset_top = 771.00006
-offset_right = 1531.0
-offset_bottom = 811.00006
-scale = Vector2(10.479589, 5.2939925)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/TextureButton" unique_id=938565431]
-position = Vector2(21.729782, 9.504391)
-scale = Vector2(0.09922279, 0.19800813)
-sprite_frames = SubResource("SpriteFrames_ilpo5")
-
-[node name="TextureButton2" type="TextureButton" parent="Buttons" unique_id=965449774]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/TextureButton2" unique_id=2013656569]
-position = Vector2(930.00006, 545)
-scale = Vector2(1.0272243, 1.0272243)
-sprite_frames = SubResource("SpriteFrames_2fmb7")
 
 [node name="Background" type="Node2D" parent="." unique_id=1298617703]
 position = Vector2(0, -4)
@@ -433,6 +330,53 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.28004965
 speed_scale = 0.3
+
+[node name="RightTwin" type="Node2D" parent="." unique_id=1096369104]
+visible = false
+
+[node name="RightMan05" type="Sprite2D" parent="RightTwin" unique_id=1500466972]
+position = Vector2(486, 953)
+texture = ExtResource("28_pmf6l")
+
+[node name="RightMan510" type="Sprite2D" parent="RightTwin" unique_id=1886487705]
+position = Vector2(486, 953)
+texture = ExtResource("29_3egxp")
+
+[node name="RightMan1020" type="Sprite2D" parent="RightTwin" unique_id=761635797]
+position = Vector2(486, 953)
+texture = ExtResource("30_fpum5")
+
+[node name="RightMan2030" type="Sprite2D" parent="RightTwin" unique_id=2004980755]
+position = Vector2(486, 953)
+texture = ExtResource("31_fbq86")
+
+[node name="RightMan3040" type="Sprite2D" parent="RightTwin" unique_id=1322657131]
+position = Vector2(486, 953)
+texture = ExtResource("32_er0xd")
+
+[node name="RightMan4050" type="Sprite2D" parent="RightTwin" unique_id=1365501008]
+position = Vector2(486, 953)
+texture = ExtResource("33_pecm8")
+
+[node name="RightMan5060" type="Sprite2D" parent="RightTwin" unique_id=401841140]
+position = Vector2(486, 953)
+texture = ExtResource("34_2wwrp")
+
+[node name="RightMan6070" type="Sprite2D" parent="RightTwin" unique_id=838406835]
+position = Vector2(486, 953)
+texture = ExtResource("35_1g0s3")
+
+[node name="RightMan7080" type="Sprite2D" parent="RightTwin" unique_id=406988469]
+position = Vector2(486, 953)
+texture = ExtResource("36_7xwsd")
+
+[node name="RightMan8090" type="Sprite2D" parent="RightTwin" unique_id=1236950031]
+position = Vector2(486, 953)
+texture = ExtResource("37_gtl5f")
+
+[node name="RightMan90100" type="Sprite2D" parent="RightTwin" unique_id=1427196699]
+position = Vector2(486, 953)
+texture = ExtResource("38_d3umf")
 
 [connection signal="pressed" from="Buttons/NoButton" to="Gui-Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Buttons/YesButton" to="Gui-Control" method="_on_button_pressed"]
