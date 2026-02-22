@@ -5,6 +5,84 @@
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Script" uid="uid://cu3npowt4r1px" path="res://scenes/node_example.gd" id="3_a5686"]
 [ext_resource type="Script" uid="uid://cpqpmnlv47hfy" path="res://scenes/gui_control.gd" id="5_2577t"]
+[ext_resource type="Texture2D" uid="uid://durbm5qg8ntlx" path="res://assets/left guy/left guy/Left guy 0-5.png" id="6_5jhce"]
+[ext_resource type="Texture2D" uid="uid://cqyqn6ch5a66r" path="res://assets/longarms/Left Hand.png" id="7_ilpo5"]
+[ext_resource type="Script" uid="uid://dci3klk6dr4fd" path="res://scenes/hands.gd" id="8_pxehq"]
+[ext_resource type="Texture2D" uid="uid://cw2t2inpo8nmn" path="res://assets/hands/ old left hand.png" id="9_ilpo5"]
+[ext_resource type="Texture2D" uid="uid://cbdrrtkxpmxlp" path="res://assets/hands/ Right hand pointer.png" id="10_pxehq"]
+[ext_resource type="Texture2D" uid="uid://bk5l4ilhuidds" path="res://assets/hands/ Left Hand pointer.png" id="11_4d8mm"]
+[ext_resource type="Texture2D" uid="uid://d1w0mchqcary8" path="res://assets/hands/ old Right Hand.png" id="12_th7mp"]
+[ext_resource type="Texture2D" uid="uid://bta5etl1p85nf" path="res://assets/left and right hands/Right Hand.png" id="13_q7kwb"]
+[ext_resource type="Texture2D" uid="uid://dn3lwktkrfkrk" path="res://assets/left guy/left guy/Left Guy 60-70.png" id="14_ilpo5"]
+[ext_resource type="Texture2D" uid="uid://1r5d0itj8ilm" path="res://assets/bg1_sprite_sheet.png" id="15_pxehq"]
+[ext_resource type="Texture2D" uid="uid://yc6pi4lhmoee" path="res://assets/no1.png" id="15_th7mp"]
+[ext_resource type="Texture2D" uid="uid://cwtmojyp5gek" path="res://assets/no_sprite_sheet.png" id="16_q7kwb"]
+[ext_resource type="Texture2D" uid="uid://bu37ifm7pid77" path="res://assets/yesbutton.png" id="17_q7kwb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hysgw"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(0, 0, 1478, 482)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l64ye"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(1478, 0, 1478, 482)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rohyw"]
+atlas = ExtResource("16_q7kwb")
+region = Rect2(2956, 0, 1478, 482)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilpo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hysgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l64ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rohyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d8mm"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(0, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th7mp"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(1440, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7kwb"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(2880, 0, 1440, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7ls4"]
+atlas = ExtResource("15_pxehq")
+region = Rect2(4320, 0, 1440, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hysgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d8mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th7mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7kwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7ls4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="IngameScene" type="Node2D" unique_id=1150025762]
 
@@ -30,45 +108,161 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_2577t")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="Gui-Control" unique_id=2048233691]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.025
+anchor_top = 9.327893
+anchor_right = 16.025
+anchor_bottom = 9.327893
 offset_left = 337.0
 offset_top = 192.0
 offset_right = 419.0
 offset_bottom = 233.0
+scale = Vector2(1, 1.020739)
 text = "No"
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="Gui-Control" unique_id=1238844547]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.025
+anchor_top = 9.327893
+anchor_right = 16.025
+anchor_bottom = 9.327893
 offset_left = 50.0
 offset_top = 267.0
 offset_right = 290.11572
 offset_bottom = 314.6529
 rotation = -1.5707964
+scale = Vector2(1, 1.020739)
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar2" type="ProgressBar" parent="Gui-Control" unique_id=1536481294]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.025
+anchor_top = 9.327893
+anchor_right = 16.025
+anchor_bottom = 9.327893
 offset_left = 468.0
 offset_top = 273.0
 offset_right = 708.1157
 offset_bottom = 320.6529
 rotation = -1.5707964
+scale = Vector2(1, 1.020739)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Gui-Control" unique_id=1494078535]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.025
+anchor_top = 9.327893
+anchor_right = 16.025
+anchor_bottom = 9.327893
 offset_left = 118.0
 offset_top = 36.0
 offset_right = 298.0
 offset_bottom = 124.0
+scale = Vector2(1, 1.020739)
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="Gui-Control" unique_id=901795865]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.025
+anchor_top = 9.327893
+anchor_right = 16.025
+anchor_bottom = 9.327893
 offset_left = 150.0
 offset_top = 187.0
 offset_right = 237.0
 offset_bottom = 232.0
+scale = Vector2(1, 1.020739)
 text = "Yes"
+metadata/_edit_use_anchors_ = true
+
+[node name="Twins" type="Node2D" parent="Gui-Control" unique_id=1372043728]
+position = Vector2(1444.0001, 332.00003)
+scale = Vector2(1.5046302, 1.3663852)
+
+[node name="LeftGuy05" type="Sprite2D" parent="Gui-Control/Twins" unique_id=475143076]
+position = Vector2(-315.02765, 150.76276)
+scale = Vector2(0.66461515, 0.7318581)
+texture = ExtResource("6_5jhce")
+
+[node name="LeftHand2" type="Sprite2D" parent="." unique_id=970710767]
+z_index = 1
+position = Vector2(875, 1014)
+texture = ExtResource("7_ilpo5")
+offset = Vector2(40, 38)
+script = ExtResource("8_pxehq")
+
+[node name="OldLeftHand" type="Sprite2D" parent="." unique_id=2005705359]
+visible = false
+position = Vector2(1236, 382)
+texture = ExtResource("9_ilpo5")
+
+[node name="RightHandPointer" type="Sprite2D" parent="." unique_id=1156906571]
+visible = false
+position = Vector2(1319, 483)
+texture = ExtResource("10_pxehq")
+
+[node name="LeftHandPointer" type="Sprite2D" parent="." unique_id=1420558803]
+visible = false
+position = Vector2(1611, 646)
+texture = ExtResource("11_4d8mm")
+
+[node name="OldRightHand" type="Sprite2D" parent="." unique_id=1164687774]
+visible = false
+position = Vector2(1420, 481)
+texture = ExtResource("12_th7mp")
+
+[node name="RightHand" type="Sprite2D" parent="." unique_id=615680506]
+visible = false
+position = Vector2(1568, 314)
+texture = ExtResource("13_q7kwb")
+
+[node name="LeftGuy6070" type="Sprite2D" parent="." unique_id=1132542686]
+position = Vector2(964, 540)
+texture = ExtResource("14_ilpo5")
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1731727389]
+
+[node name="NoButton" type="TextureButton" parent="Buttons" unique_id=774428504]
+offset_left = -78.0
+offset_top = 13.0
+offset_right = 1842.0
+offset_bottom = 1093.0
+texture_normal = ExtResource("15_th7mp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/NoButton" unique_id=938565431]
+visible = false
+position = Vector2(2015, 141)
+sprite_frames = SubResource("SpriteFrames_ilpo5")
+frame_progress = 0.2251306
+
+[node name="YesButton" type="TextureButton" parent="Buttons" unique_id=405309694]
+offset_left = -41.0
+offset_top = 5.0
+offset_right = 1879.0
+offset_bottom = 1085.0
+texture_normal = ExtResource("17_q7kwb")
+
+[node name="Background" type="Node2D" parent="." unique_id=1298617703]
+position = Vector2(0, -4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background" unique_id=1647369391]
+z_index = -2
+position = Vector2(959, 529)
+scale = Vector2(1.4333754, 1.4129297)
+sprite_frames = SubResource("SpriteFrames_hysgw")
+autoplay = "default"
+frame = 1
+frame_progress = 0.28004965
+speed_scale = 0.3
 
 [connection signal="pressed" from="Gui-Control/Button2" to="Gui-Control" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Gui-Control/Button" to="Gui-Control" method="_on_button_pressed"]

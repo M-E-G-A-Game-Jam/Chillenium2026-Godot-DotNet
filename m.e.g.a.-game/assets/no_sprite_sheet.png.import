@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dha0xb05m4db"
-path="res://.godot/imported/Left Guy 80-90.png-ebca0c3bb857b2e8401f3026125edc5f.ctex"
+uid="uid://cwtmojyp5gek"
+path="res://.godot/imported/no_sprite_sheet.png-9e66c9d987f5c3f0deb424de9dda79f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Left Guy 80-90.png"
-dest_files=["res://.godot/imported/Left Guy 80-90.png-ebca0c3bb857b2e8401f3026125edc5f.ctex"]
+source_file="res://assets/no_sprite_sheet.png"
+dest_files=["res://.godot/imported/no_sprite_sheet.png-9e66c9d987f5c3f0deb424de9dda79f8.ctex"]
 
 [params]
 

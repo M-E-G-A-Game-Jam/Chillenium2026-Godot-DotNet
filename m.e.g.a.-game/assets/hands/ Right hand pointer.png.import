@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dupomsvhmdw2b"
-path="res://.godot/imported/Left guy 0-5.png-fe001403828adb74b8d449782051cb41.ctex"
+uid="uid://cbdrrtkxpmxlp"
+path="res://.godot/imported/ Right hand pointer.png-0b50cf880a7321056c3ab7e8e5a79052.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Left guy 0-5.png"
-dest_files=["res://.godot/imported/Left guy 0-5.png-fe001403828adb74b8d449782051cb41.ctex"]
+source_file="res://assets/hands/ Right hand pointer.png"
+dest_files=["res://.godot/imported/ Right hand pointer.png-0b50cf880a7321056c3ab7e8e5a79052.ctex"]
 
 [params]
 

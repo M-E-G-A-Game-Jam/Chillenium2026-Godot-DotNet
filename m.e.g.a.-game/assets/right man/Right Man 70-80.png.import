@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2bp0tqlu7qi"
-path="res://.godot/imported/Left Guy 50-60.png-5f3bd4598a6440199d4f21f45c73b716.ctex"
+uid="uid://dupfh48rv4cv5"
+path="res://.godot/imported/Right Man 70-80.png-bedc1d2487b2b6cd45199a3a41002c36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Left Guy 50-60.png"
-dest_files=["res://.godot/imported/Left Guy 50-60.png-5f3bd4598a6440199d4f21f45c73b716.ctex"]
+source_file="res://assets/right man/Right Man 70-80.png"
+dest_files=["res://.godot/imported/Right Man 70-80.png-bedc1d2487b2b6cd45199a3a41002c36.ctex"]
 
 [params]
 

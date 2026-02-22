@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db88030g1ub1k"
-path="res://.godot/imported/Left Guy 10-20.png-9ac73121438d62500e76c32c0573f63f.ctex"
+uid="uid://bcemujfxbjxmx"
+path="res://.godot/imported/Left Guy 80-90.png-bed501122986332b603a7c76eb489d3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Left Guy 10-20.png"
-dest_files=["res://.godot/imported/Left Guy 10-20.png-9ac73121438d62500e76c32c0573f63f.ctex"]
+source_file="res://assets/left guy/left guy/Left Guy 80-90.png"
+dest_files=["res://.godot/imported/Left Guy 80-90.png-bed501122986332b603a7c76eb489d3f.ctex"]
 
 [params]
 

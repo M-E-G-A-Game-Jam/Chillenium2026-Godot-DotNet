@@ -243,9 +243,9 @@ speed_scale = 0.3
 
 [node name="optionsButton" type="TextureButton" parent="Buttons" unique_id=1381104240]
 top_level = true
-offset_left = 633.0
+offset_left = 663.0
 offset_top = 787.0
-offset_right = 1126.0
+offset_right = 1156.0
 offset_bottom = 1051.0
 texture_normal = ExtResource("7_dihg0")
 script = ExtResource("21_kcrt3")

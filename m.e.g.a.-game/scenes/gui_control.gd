@@ -50,9 +50,7 @@ func _ready() -> void:
 	rng.randomize()
 	label.text = "Do you want to " + questions.pick_random() + "?"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 
 func _on_button_pressed() -> void:
