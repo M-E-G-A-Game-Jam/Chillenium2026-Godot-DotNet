@@ -17,17 +17,22 @@
 [ext_resource type="Script" uid="uid://t7vt4x5ps1ky" path="res://scenes/start_button.gd" id="15_5diu1"]
 [ext_resource type="Texture2D" uid="uid://byyfvdxf7fpmw" path="res://assets/stormy sky.png" id="15_hr4ih"]
 [ext_resource type="Texture2D" uid="uid://dhmlseidnsrrh" path="res://assets/Lightning copy.png" id="16_xcgji"]
+[ext_resource type="AudioStream" uid="uid://ctdmqn1s5qicw" path="res://assets/SoundSfx/Chillenium Sound Effects/SFX 1.mp3" id="17_a5e1i"]
 [ext_resource type="Texture2D" uid="uid://cpoqf2eb2qcrm" path="res://assets/Lightning copy 2.png" id="17_f1hcs"]
 [ext_resource type="Script" uid="uid://c34mxkgkip0ii" path="res://scenes/end_button.gd" id="18_c50wd"]
+[ext_resource type="AudioStream" uid="uid://bynkishavua6i" path="res://assets/SoundSfx/Chillenium Sound Effects/SFX 10.mp3" id="18_g7odu"]
 [ext_resource type="Texture2D" uid="uid://dyytahl34mu3q" path="res://assets/Foreground Storm Clouds.png" id="18_pg2s2"]
 [ext_resource type="Texture2D" uid="uid://cv400idd2o5cw" path="res://assets/Background Clouds copy.png" id="19_xmgyx"]
 [ext_resource type="Texture2D" uid="uid://ba0t62cscfnlv" path="res://assets/Lightning.png" id="20_blghb"]
 [ext_resource type="Texture2D" uid="uid://bluxl4lfw12yc" path="res://assets/Nah, I'd Live..png" id="21_f1hcs"]
+[ext_resource type="AudioStream" uid="uid://fe1e5b0eumj5" path="res://assets/SoundSfx/Chillenium Sound Effects/SFX 5.mp3" id="21_f107f"]
 [ext_resource type="Script" uid="uid://ct28mwrcg0hlt" path="res://scenes/options_button.gd" id="21_kcrt3"]
 [ext_resource type="Texture2D" uid="uid://cqdhvfwpsw38s" path="res://assets/Speech Bubble Left.png" id="22_pg2s2"]
 [ext_resource type="Texture2D" uid="uid://cgl4hetwrcvyi" path="res://assets/Speech Bubble Right.png" id="23_blghb"]
 [ext_resource type="Texture2D" uid="uid://b4oums14klwy5" path="res://assets/Guy Laying Down Right.png" id="24_ueaqd"]
+[ext_resource type="AudioStream" uid="uid://bt5aligjjat73" path="res://assets/SoundSfx/Chillenium Sound Effects/SFX 2.mp3" id="25_jqs8n"]
 [ext_resource type="Texture2D" uid="uid://byrkgh1ktkne" path="res://assets/Nah, I'd Die..png" id="25_wrxld"]
+[ext_resource type="AudioStream" uid="uid://by5xq50mhlb82" path="res://assets/SoundSfx/Chillenium Music/Menu Screen Loop.mp3" id="33_i26lm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igs2m"]
 atlas = ExtResource("3_wgsso")
@@ -123,6 +128,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FadeinLayer" type="CanvasLayer" parent="." unique_id=970814249]
+
+[node name="FadeReact" type="ColorRect" parent="FadeinLayer" unique_id=125260539]
+z_index = 9
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="NormalCloudGroup" type="Node2D" parent="." unique_id=511013578]
 
@@ -223,6 +240,12 @@ frame = 1
 frame_progress = 0.21952282
 speed_scale = 0.3
 
+[node name="hover_sfx" type="AudioStreamPlayer" parent="Buttons/startButton" unique_id=1839324053]
+stream = ExtResource("17_a5e1i")
+
+[node name="click_sfx" type="AudioStreamPlayer" parent="Buttons/startButton" unique_id=1838803845]
+stream = ExtResource("18_g7odu")
+
 [node name="endButton" type="TextureButton" parent="Buttons" unique_id=588010456]
 top_level = true
 offset_left = 1059.0
@@ -240,6 +263,9 @@ sprite_frames = SubResource("SpriteFrames_rqglp")
 animation = &"idle"
 autoplay = "idle"
 speed_scale = 0.3
+
+[node name="hoverend_sfx" type="AudioStreamPlayer" parent="Buttons/endButton" unique_id=800855547]
+stream = ExtResource("21_f107f")
 
 [node name="optionsButton" type="TextureButton" parent="Buttons" unique_id=1381104240]
 top_level = true
@@ -259,6 +285,9 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.93809867
 speed_scale = 0.3
+
+[node name="hoveroptions_sfx" type="AudioStreamPlayer" parent="Buttons/optionsButton" unique_id=1237046303]
+stream = ExtResource("25_jqs8n")
 
 [node name="StartGuyGroup" type="Node2D" parent="." unique_id=959748159]
 
@@ -295,10 +324,15 @@ position = Vector2(1197, 196)
 scale = Vector2(0.76535594, 0.76535594)
 texture = ExtResource("25_wrxld")
 
+[node name="Menu Music" type="AudioStreamPlayer2D" parent="." unique_id=497232076]
+stream = ExtResource("33_i26lm")
+autoplay = true
+
 [connection signal="mouse_entered" from="Buttons/startButton" to="Buttons/startButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/startButton" to="Buttons/startButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/startButton" to="Buttons/startButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/endButton" to="Buttons/endButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/endButton" to="Buttons/endButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/endButton" to="Buttons/endButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/optionsButton" to="Buttons/optionsButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/optionsButton" to="Buttons/optionsButton" method="_on_pressed"]

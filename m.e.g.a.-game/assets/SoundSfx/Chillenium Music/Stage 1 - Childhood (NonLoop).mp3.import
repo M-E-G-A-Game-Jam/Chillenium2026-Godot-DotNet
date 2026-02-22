@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6isotre3p4yx"
+path="res://.godot/imported/Stage 1 - Childhood (NonLoop).mp3-854414c64754a4f9d882f0175f7782f0.mp3str"
+
+[deps]
+
+source_file="res://assets/SoundSfx/Chillenium Music/Stage 1 - Childhood (NonLoop).mp3"
+dest_files=["res://.godot/imported/Stage 1 - Childhood (NonLoop).mp3-854414c64754a4f9d882f0175f7782f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
