@@ -213,3 +213,7 @@ func _on_button_2_pressed() -> void:
 	if health_bar.value >= ExpectedDeath:
 		print("You have died")
 	print("then no button has been pressed!")
+
+
+func _on_no_button_pressed() -> void:
+	pass # Replace with function body.
