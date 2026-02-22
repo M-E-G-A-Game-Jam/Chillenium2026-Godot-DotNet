@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dby3vtj3kb7ep"
+path="res://.godot/imported/Stage 2 - City Life .mp3-26d49fe3dd527cf30575bcf9e3460bfc.mp3str"
+
+[deps]
+
+source_file="res://assets/SoundSfx/Chillenium Music/Stage 2 - City Life .mp3"
+dest_files=["res://.godot/imported/Stage 2 - City Life .mp3-26d49fe3dd527cf30575bcf9e3460bfc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

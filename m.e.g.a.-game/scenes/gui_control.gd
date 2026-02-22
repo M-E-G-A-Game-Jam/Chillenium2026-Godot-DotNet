@@ -1,103 +1,131 @@
 extends Control
+#Change twins as you age up
+@onready var left_twin := $LeftTwin
+@onready var right_twin := get_node("../RightTwin")
+
+
+var left_twin_nodes: Dictionary = {}
+var right_twin_nodes: Dictionary = {}
+var last_left_key := ""
+var last_right_key := ""
+
 
 #initiralizing a Random Generator
 var rng = RandomNumberGenerator.new()
 
+func update_portraits() -> void:
+	var left_key := get_age_key_from(health_bar.value)
+	var right_key := get_age_key_from(health_bar2.value)
+
+	# LEFT PlaYer
+	if left_key != last_left_key:
+		for n in left_twin_nodes.values():
+			n.visible = false
+		left_twin_nodes[left_key].visible = true
+		last_left_key = left_key
+
+	# RIGHT BoT
+	if right_key != last_right_key:
+		for n in right_twin_nodes.values():
+			n.visible = false
+		right_twin_nodes[right_key].visible = true
+		last_right_key = right_key
+		
 var question_data = {
 	"0-5": [
-		{"text": "Learn to read?\n", "yes": 1, "no": -1},
-		{"text": "Eat a penny?\n", "yes": -1, "no": 1}, # Negative to eat pennies!
-		{"text": "Play with a big tower of legos, twin?\n", "yes": 1, "no": -1},
-		{"text": "Slide down the very steep slide, twin?\n", "yes": 1, "no": -1},
-		{"text": "Wait until timeout is over, twin?\n", "yes": 1, "no": -1},
-		{"text": "Run across a creek filled with slippery rocks, twin?\n", "yes": 1, "no": -1},
-		{"text": "Yell at Mike the Tiger through a broken fence?\n", "yes": 1, "no": -1},
-		{"text": "Sneak into a closed ride at ThisKnee World?\n", "yes": 1, "no": -1},
-		{"text": "Touch a hot stove because it looks enticing?\n", "yes": -5, "no": 1}
+		{"text": "Learn to read?", "yes": 1, "no": -1},
+		{"text": "Eat a penny?", "yes": -1, "no": 1},
+		{"text": "Play with a big tower of legos, twin?", "yes": 1, "no": -1},
+		{"text": "Slide down the very steep slide, twin?", "yes": -1, "no": 1},
+		{"text": "Wait until timeout is over, twin?", "yes": 1, "no": -1},
+		{"text": "Run across a creek filled with slippery rocks, twin?", "yes": -1, "no": 1},
+		{"text": "Yell at Mike the Tiger through a broken fence?", "yes": -1, "no": 1},
+		{"text": "Sneak into a closed ride at ThisKnee World?", "yes": -1, "no": 1},
+		{"text": "Touch a hot stove because it looks enticing?", "yes": -5, "no": 1}
 	],
 	"6-10": [
-		{"text": "Bully a classmate?\n", "yes": -1, "no": 1},
-		{"text": "Join a sports team?\n", "yes": 1, "no": -1},
-		{"text": "Slide down a slide that is way too tall for you?\n", "yes": 1, "no": -1},
-		{"text": "Run a lemonade stand?\n", "yes": 1, "no": -1},
-		{"text": "Grow taller?\n", "yes": 1, "no": 0},
-		{"text": "Eat way too much birthday cake?\n", "yes": -1, "no": 1},
-		{"text": "Sign up for Soccer?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for Basketball?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for Baseball?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for American Football?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for Gymnastics?\n", "yes": 1, "no": -1}
+		{"text": "Bully a classmate?", "yes": -1, "no": 1},
+		{"text": "Join a sports team?", "yes": 1, "no": -1},
+		{"text": "Slide down a slide that is way too tall for you?", "yes": -1, "no": 1},
+		{"text": "Run a lemonade stand?", "yes": 1, "no": -1},
+		{"text": "Grow taller?", "yes": 1, "no": 0},
+		{"text": "Eat way too much birthday cake?", "yes": -1, "no": 1},
+		{"text": "Sign up for Soccer?", "yes": 1, "no": -1},
+		{"text": "Sign up for Basketball?", "yes": 1, "no": -1},
+		{"text": "Sign up for Baseball?", "yes": 1, "no": -1},
+		{"text": "Sign up for American Football?", "yes": -1, "no": 1}, # High injury risk!
+		{"text": "Sign up for Gymnastics?", "yes": 1, "no": -1}
 	],
 	"11-20": [
-		{"text": "Start smoking?\n", "yes": -1, "no": 1},
-		{"text": "Join the school choir?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for Rugby?\n", "yes": 1, "no": -1},
-		{"text": "Sign up for Private School?\n", "yes": 1, "no": -1},
-		{"text": "Climb 'Beeg Roc' while rock climbing?\n", "yes": 1, "no": -1},
-		{"text": "Go inside the Haunted House?\n", "yes": 1, "no": -1},
-		{"text": "Join the American Parkour Samurai Gladiator Challenge?\n", "yes": 1, "no": -1},
-		{"text": "Have a big growth spurt?\n", "yes": 1, "no": 0},
-		{"text": "Spar with your twin just for fun?\n", "yes": 1, "no": -1},
-		{"text": "Go to a dangerous Black Friday Sale at BallMart?\n", "yes": 1, "no": -1},
-		{"text": "Try to solve a coding bug as fast as possible?\n", "yes": 1, "no": -1},
-		{"text": "Keep the 'Life Note' and write your name in it?\n", "yes": -10, "no": 1},
-		{"text": "Play 'Umamusume: John Darby' gacha game?\n", "yes": 1, "no": -1},
-		{"text": "Study early for the big test?\n", "yes": 1, "no": -1},
-		{"text": "Spam dank memes everywhere you go?\n", "yes": 1, "no": -1}
+		{"text": "Start smoking?", "yes": -1, "no": 1},
+		{"text": "Join the school choir?", "yes": 1, "no": -1},
+		{"text": "Sign up for Rugby?", "yes": -1, "no": 1},
+		{"text": "Sign up for Private School?", "yes": 1, "no": -1},
+		{"text": "Climb 'Beeg Roc' while rock climbing?", "yes": -1, "no": 1},
+		{"text": "Go inside the Haunted House?", "yes": -1, "no": 1},
+		{"text": "Join the American Parkour Samurai Gladiator Challenge?", "yes": -1, "no": 1},
+		{"text": "Have a big growth spurt?", "yes": 1, "no": 0},
+		{"text": "Spar with your twin just for fun?", "yes": -1, "no": 1},
+		{"text": "Go to a dangerous Black Friday Sale at BallMart?", "yes": -1, "no": 1},
+		{"text": "Try to solve a coding bug as fast as possible?", "yes": -1, "no": 1},
+		{"text": "Keep the 'Life Note' and write your name in it?", "yes": -10, "no": 1},
+		{"text": "Play 'Umamusume: John Darby' gacha game?", "yes": -1, "no": 1},
+		{"text": "Study early for the big test?", "yes": 1, "no": -1},
+		{"text": "Spam dank memes everywhere you go?", "yes": -1, "no": 1}
 	],
 	"21-30": [
-		{"text": "Go to a frat party?\n", "yes": 1, "no": -1},
-		{"text": "Climb 'Beeg Roc'?\n", "yes": 1, "no": -1},
-		{"text": "Keep the 'Life Note' and write your name in it?\n", "yes": -10, "no": 1},
-		{"text": "Your twin asks if you'd lose a certain fight. Would you lose?\n", "yes": -1, "no": 1}
+		{"text": "Go to a frat party?", "yes": -1, "no": 1},
+		{"text": "Climb 'Beeg Roc'?", "yes": -1, "no": 1},
+		{"text": "Keep the 'Life Note' and write your name in it?", "yes": -10, "no": 1},
+		{"text": "Your twin asks if you'd lose a certain fight. Would you lose?", "yes": -1, "no": 1}
 	],
 	"31-40": [
-		{"text": "Have children?\n", "yes": 1, "no": -1},
-		{"text": "Talk to the skrunkly guy at the Gardening Addiction support group?\n", "yes": 1, "no": -1},
-		{"text": "Cheat on your significant other?\n", "yes": -2, "no": 1},
-		{"text": "A stray dog bit you. Go to the doctor even if insurance might not cover it?\n", "yes": 1, "no": -2},
-		{"text": "Invest everything into Bitcoin?\n", "yes": 1, "no": -1},
-		{"text": "Bail your hairdresser out of jail for the Nair incident?\n", "yes": 1, "no": -1},
-		{"text": "Go bald voluntarily?\n", "yes": 1, "no": 0},
-		{"text": "Quit your job to follow your dreams?\n", "yes": 1, "no": -1},
-		{"text": "Max out your 401k contribution?\n", "yes": 1, "no": -1},
-		{"text": "Max out your credit card on a jet ski?\n", "yes": 1, "no": -1}
+		{"text": "Have children?", "yes": -1, "no": 1}, # Kids are stressful!
+		{"text": "Talk to the skrunkly guy at the Gardening Addiction support group?", "yes": 1, "no": -1},
+		{"text": "Cheat on your significant other?", "yes": -2, "no": 1},
+		{"text": "A stray dog bit you. Go to the doctor even if insurance might not cover it?", "yes": 1, "no": -2},
+		{"text": "Invest everything into Bitcoin?", "yes": -1, "no": 1},
+		{"text": "Bail your hairdresser out of jail for the Nair incident?", "yes": -1, "no": 1},
+		{"text": "Go bald voluntarily?", "yes": 1, "no": 0},
+		{"text": "Quit your job to follow your dreams?", "yes": 1, "no": -1},
+		{"text": "Max out your 401k contribution?", "yes": 1, "no": -1},
+		{"text": "Max out your credit card on a jet ski?", "yes": -1, "no": 1}
 	],
 	"41-50": [
-		{"text": "Buy a mid-life crisis sports car?\n", "yes": 1, "no": -1},
-		{"text": "Start doing yoga to fix your 'bad back'?\n", "yes": 1, "no": -1},
-		{"text": "Try to DIY fix the electrical wiring in your house?\n", "yes": -2, "no": 1},
-		{"text": "Yell at the neighbor's kid for stepping on your lawn?\n", "yes": 1, "no": -1},
-		{"text": "Go on a strictly 'Juice Cleanse' diet for a month?\n", "yes": 1, "no": -1}
+		{"text": "Buy a mid-life crisis sports car?", "yes": -1, "no": 1},
+		{"text": "Start doing yoga to fix your 'bad back'?", "yes": 1, "no": -1},
+		{"text": "Try to DIY fix the electrical wiring in your house?", "yes": -2, "no": 1},
+		{"text": "Yell at the neighbor's kid for stepping on your lawn?", "yes": -1, "no": 1},
+		{"text": "Go on a strictly 'Juice Cleanse' diet for a month?", "yes": -1, "no": 1}
 	],
 	"51-60": [
-		{"text": "Retire early and live on a boat?\n", "yes": 1, "no": -1},
-		{"text": "Take up extreme bird watching?\n", "yes": 1, "no": 0},
-		{"text": "Start a fight with a goose at the local pond?\n", "yes": 1, "no": -1},
-		{"text": "Learn how to use 'The TikTok'?\n", "yes": 1, "no": -1},
-		{"text": "Eat a steak every single night?\n", "yes": 1, "no": -1}
+		{"text": "Retire early and live on a boat?", "yes": 1, "no": -1},
+		{"text": "Take up extreme bird watching?", "yes": 1, "no": 0},
+		{"text": "Start a fight with a goose at the local pond?", "yes": -1, "no": 1},
+		{"text": "Learn how to use 'The TikTok'?", "yes": -1, "no": 1},
+		{"text": "Eat a steak every single night?", "yes": -1, "no": 1}
 	],
 	"61-70": [
-		{"text": "Move into a retirement community with a great pool?\n", "yes": 1, "no": -1},
-		{"text": "Refuse to wear your hearing aid?\n", "yes": -1, "no": 1},
-		{"text": "Drive your car through the front of a pharmacy accidentally?\n", "yes": -2, "no": 1},
-		{"text": "Take up competitive Bingo?\n", "yes": 1, "no": 0}
+		{"text": "Move into a retirement community with a great pool?", "yes": 1, "no": -1},
+		{"text": "Refuse to wear your hearing aid?", "yes": -1, "no": 1},
+		{"text": "Drive your car through the front of a pharmacy accidentally?", "yes": -2, "no": 1},
+		{"text": "Take up competitive Bingo?", "yes": 1, "no": 0}
 	],
 	"71-80": [
-		{"text": "Try to do a backflip to impress your grandkids?\n", "yes": -5, "no": 1},
-		{"text": "Eat nothing but soft prunes?\n", "yes": 1, "no": -1},
-		{"text": "Argue with a ghost in the hallway?\n", "yes": -1, "no": 1},
-		{"text": "Finally tell your twin what you really think of them?\n", "yes": 1, "no": -1}
+		{"text": "Try to do a backflip to impress your grandkids?", "yes": -5, "no": 1},
+		{"text": "Eat nothing but soft prunes?", "yes": 1, "no": -1},
+		{"text": "Argue with a ghost in the hallway?", "yes": -1, "no": 1},
+		{"text": "Finally tell your twin what you really think of them?", "yes": 1, "no": -1}
 	],
 	"81-90": [
-		{"text": "Attempt to outrun a snail?\n", "yes": 1, "no": -1},
-		{"text": "Take a 4-hour nap in the middle of the grocery store?\n", "yes": 1, "no": -1},
-		{"text": "Mistake the TV remote for a telephone?\n", "yes": 0, "no": 0}
+		{"text": "Attempt to outrun a snail?", "yes": -1, "no": 1},
+		{"text": "Take a 4-hour nap in the middle of the grocery store?", "yes": 1, "no": -1},
+		{"text": "Mistake the TV remote for a telephone?", "yes": 0, "no": 0}
 	],
 	"91-100": [
-		{"text": "Breathe deeply?\n", "yes": 1, "no": -10},
-		{"text": "Try to remember where you put your teeth?\n", "yes": 1, "no": -1},
-		{"text": "Ascend to a higher plane of existence?\n", "yes": 1, "no": -10}
+		{"text": "Breathe deeply?", "yes": 1, "no": -10},
+		{"text": "Try to remember where you put your teeth?", "yes": 1, "no": -1},
+		{"text": "Ascend to a higher plane of existence?", "yes": -10, "no": 1}
 	]
 }
 
@@ -124,30 +152,54 @@ func _ready() -> void:
 	health_bar.value = 1
 	health_bar2.max_value = 100
 	health_bar2.value = 1
-	ExpectedDeath = 70 # Start with a reasonable baseline
-	BotExpectedDeath = 70
-	
+	ExpectedDeath = health_bar.max_value
 	rng.randomize()
 	label.text = "Do you want to " + get_next_question() + "?"
 
+	left_twin_nodes = {
+		"0-5": left_twin.get_node("LeftGuy05"),
+		"6-10": left_twin.get_node("LeftGuy510"),
+		"11-20": left_twin.get_node("LeftGuy1020"),
+		"21-30": left_twin.get_node("LeftGuy2030"),
+		"31-40": left_twin.get_node("LeftGuy3040"),
+		"41-50": left_twin.get_node("LeftGuy4050"),
+		"51-60": left_twin.get_node("LeftGuy5060"),
+		"61-70": left_twin.get_node("LeftGuy6070"),
+		"71-80": left_twin.get_node("LeftGuy7080"),
+		"81-90": left_twin.get_node("LeftGuy8090"),
+		"91-100": left_twin.get_node("LeftGuy90100"),
+		}
+		
+	right_twin_nodes = {
+		"0-5": right_twin.get_node("RightMan05"),
+		"6-10": right_twin.get_node("RightMan510"),
+		"11-20": right_twin.get_node("RightMan1020"),
+		"21-30": right_twin.get_node("RightMan2030"),
+		"31-40": right_twin.get_node("RightMan3040"),	
+		"41-50": right_twin.get_node("RightMan4050"),
+		"51-60": right_twin.get_node("RightMan5060"),
+		"61-70": right_twin.get_node("RightMan6070"),
+		"71-80": right_twin.get_node("RightMan7080"),
+		"81-90": right_twin.get_node("RightMan8090"),
+		"91-100": right_twin.get_node("RightMan90100"),
+	}
+	update_portraits()
 
-
-
-func get_age_key() -> String:
-	if health_bar.value <= 5: return "0-5"
-	if health_bar.value <= 10: return "6-10"
-	if health_bar.value <= 20: return "11-20"
-	if health_bar.value <= 30: return "21-30"
-	if health_bar.value <= 40: return "31-40"
-	if health_bar.value <= 50: return "41-50"
-	if health_bar.value <= 60: return "51-60"
-	if health_bar.value <= 70: return "61-70"
-	if health_bar.value <= 80: return "71-80"
-	if health_bar.value <= 90: return "81-90"
+func get_age_key_from(age_value: float) -> String:
+	if age_value <= 5: return "0-5"
+	if age_value <= 10: return "6-10"
+	if age_value <= 20: return "11-20"
+	if age_value <= 30: return "21-30"
+	if age_value <= 40: return "31-40"
+	if age_value <= 50: return "41-50"
+	if age_value <= 60: return "51-60"
+	if age_value <= 70: return "61-70"
+	if age_value <= 80: return "71-80"
+	if age_value <= 90: return "81-90"
 	return "91-100"
 
 func get_next_question() -> String:
-	var key = get_age_key()
+	var key := get_age_key_from(health_bar.value)
 	var pool = question_data[key]
 	current_question = pool.pick_random()
 	return current_question["text"]
@@ -163,47 +215,60 @@ func get_random_volatility() -> int:
 		intensity = randf_range(1,3)
 	return intensity
 	
-func win_game():
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # Untrap the mouse
-	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
-
-func lose_game():
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE # Ensure they can click 'Retry'
-	get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
-
-func check_game_status():
-	# Player Wins when bot dies
-	if health_bar2.value >= BotExpectedDeath:
-		win_game()
-	# Player Loses is they die fiurst 
-	elif health_bar.value >= ExpectedDeath:
-		lose_game()
-func process_turn(choice_key: String):
-	# 1. Update Player
-	YearsAffcecting = current_question[choice_key] * get_random_volatility()
-	ExpectedDeath = clamp(ExpectedDeath + YearsAffcecting, 1, 100)
-	health_bar.value += 1
 	
-	# 2. Update Bot (Simulating their turn)
-	var bot_choice_mod = [1, -1].pick_random()
-	var bot_vol = get_random_volatility()
-	BotExpectedDeath = clamp(BotExpectedDeath + (bot_vol * bot_choice_mod), 1, 100)
-	health_bar2.value += 1
-	
-	# 3. Update Visuals
-	health_bar.modulate = Color.RED if (ExpectedDeath - health_bar.value <= 5) else Color.WHITE
-	
-	var next_q = get_next_question()
-	var status_text = "You gained/lost " + str(YearsAffcecting) + " expected years.\n"
-	status_text += "Next: " + next_q + "\n"
-	status_text += "Death Age: " + str(ExpectedDeath) + " | Your Age: " + str(health_bar.value)
-	label.text = status_text
-	
-	# 4. FINALLY: Check if someone died
-	check_game_status()
 
 func _on_button_pressed() -> void:
-	process_turn("yes")
+	YearsAffcecting = current_question["yes"] * get_random_volatility()
+		
+	health_bar.value += 1 
+	update_portraits()
+	if health_bar.value >= ExpectedDeath:
+		print("You have died")
+	
+	Botmodifier = [1, -1].pick_random() 
+	BotYearsAffcecting = Botmodifier *  get_random_volatility()
+	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
+	health_bar2.value += 1 
+	update_portraits()
+	
+	if ExpectedDeath - health_bar.value <= 5:
+		health_bar.modulate = Color.RED
+	else:
+		health_bar.modulate = Color.WHITE
+		
+	if ExpectedDeath >= 100:
+		ExpectedDeath = 100
+		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
+	else:
+		ExpectedDeath += YearsAffcecting
+		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
+
+
 
 func _on_button_2_pressed() -> void:
-	process_turn("no")
+	YearsAffcecting = current_question["no"] * get_random_volatility()
+	ExpectedDeath += YearsAffcecting
+		
+	label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
+	health_bar.value += 1 
+	update_portraits()
+	Botmodifier = [1, -1].pick_random() 
+	BotYearsAffcecting = Botmodifier *  get_random_volatility()
+	BotExpectedDeath += (BotYearsAffcecting * Botmodifier)
+	health_bar2.value += 1 
+			
+	if ExpectedDeath >= 100:
+		ExpectedDeath = 100
+		label.text = "\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is maxxed out." + "\nYour Current Age is: " + str(health_bar.value)
+	else:
+		ExpectedDeath += YearsAffcecting
+		label.text = "You got " + str(YearsAffcecting) + " years because of that decision." +"\nDo you want to " + get_next_question()+ "?" + "\n \nYour Expected Death is Now: " + str(ExpectedDeath) + "\nYour Current Age is: " + str(health_bar.value)
+
+
+	if health_bar.value >= ExpectedDeath:
+		print("You have died")
+	print("then no button has been pressed!")
+
+
+func _on_no_button_pressed() -> void:
+	pass # Replace with function body.
